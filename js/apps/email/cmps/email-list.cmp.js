@@ -1,18 +1,18 @@
-import emailPreview from './email-preview.cmp.js';
+ import emailPreview from './email-preview.cmp.js';
 
 export default {
-    props: ["books"],
+    props: ["emails"],
     template: `
-        <ul class="book-list clean-list flex wrap align-center space-around">
-            <book-preview v-for="book in books" @click.native="selectBook(book)" :book="book" :key="book.id"/>
+        <ul class="email-list clean-list flex column wrap  space-around">
+            <email-preview v-for="email in emails" @click.native="selectedEmail(email)" :email="email" :key="email.id"/>
         </ul>
     `,
     methods: {
-        selectBook(book) {
-            this.$emit("bookSelected", book);
+        selectedEmail(email) {
+            this.$emit("emailSelected", email);
         },
     },
     components: {
-        emailPreview
+    emailPreview
     }
 };

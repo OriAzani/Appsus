@@ -1,6 +1,5 @@
-import navBar from './app-nav-bar.cmp.js'
+import navBar from './cmps/app-nav-bar.cmp.js'
 import {myRouter} from './routes.js'
-
 
 new Vue({
     el: '#app',

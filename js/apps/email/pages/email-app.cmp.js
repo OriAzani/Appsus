@@ -1,16 +1,51 @@
-export default{
+import { emailService } from "../services/email-service.js";
+import emailList from "../cmps/email-list.cmp.js";
+// import bookFilter from "../cmps/book-filter.cmp.js";
 
-    template: `
-  <section>
+export default {
+  template: `
+        <main class="email-app">
+          <!-- <book-filter @filter="setFilter"/> -->
+            <email-list :emails="emailsToShow"></email-list>           
+            </main>
+    `,
+  data() {
+    return {
+      emails: [],
+      filterBy: null,
+    };
+  },
+  computed: {
+    emailsToShow() {
+      const filterBy = this.filterBy;
+      if (!filterBy) return this.emails;
+      // var filteredEmails = this.emails.filter((email) => {
+      //     const amount = email.listPrice.amount;
+      //     if (
+      //         email.title.toLowerCase().includes(filterBy.byName.toLowerCase()) &&
+      //         amount >= filterBy.minPrice &&
+      //         amount <= filterBy.maxPrice
+      //     ) {
+      //         return email;
+      //     }
+      // });
+      // return filteredEmails;
+    },
+  },
+  methods: {
+    // setFilter(filterBy) {
+    //     this.filterBy = filterBy;
+    // },
+  },
+  created() {
+    emailService.getEmails().then((emails) => {
+      this.emails = emails;
+      console.log(this.emails);
+    });
+  },
 
-    <h1>email HOME</h1>
-    <p>
-    Welcome to our book shop ome page. <br/>
-    We are writing code so we don't have time to write an about page.
-    </p>
-  </section>
-    `
-  };
-  
-  
-  
+  components: {
+    emailList,
+    //     bookFilter,
+  },
+};

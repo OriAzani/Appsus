@@ -2,3 +2,4 @@
 @import './helpers.css';
 
 /* --Import for cmps css files-- */
+@import './cmps/email-details.css';
