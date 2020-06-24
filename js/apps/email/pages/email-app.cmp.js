@@ -1,10 +1,13 @@
 import { emailService } from "../services/email-service.js";
 import emailList from "../cmps/email-list.cmp.js";
+
+import emailNav from "../cmps/email-nav-bar-cmp.js";
 // import bookFilter from "../cmps/book-filter.cmp.js";
 
 export default {
   template: `
         <main class="email-app">
+        <email-Nav></email-Nav>
           <!-- <book-filter @filter="setFilter"/> -->
             <email-list :emails="emailsToShow"></email-list>           
             </main>
@@ -40,12 +43,12 @@ export default {
   created() {
     emailService.getEmails().then((emails) => {
       this.emails = emails;
-    //  console.log(this.emails);
     });
   },
 
   components: {
     emailList,
+    emailNav
     //     bookFilter,
   },
 };

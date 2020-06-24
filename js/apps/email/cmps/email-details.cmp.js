@@ -17,26 +17,27 @@ export default {
   },
   created() {
     this.loadEmail();
-    console.log("CMP emailDetails Created");
+   
   },
-//   destroyed() {
-//     console.log("CMP CarDetails Destroyed");
-//   },
+  //   destroyed() {
+  //     console.log("CMP CarDetails Destroyed");
+  //   },
   methods: {
     close() {
       this.$router.back();
     },
+
     loadEmail() {
       const { emailId } = this.$route.params;
-
       emailService.getEmailById(emailId).then((email) => {
         this.email = email;
+        emailService.changeReadStatus(email);
       });
     },
   },
   watch: {
     "$route.params.emailId"(newEmailId) {
-      console.log("email ID CHANGED IN ROUTE", newEmailId);
+
       this.loadEmail();
     },
   },

@@ -12,6 +12,7 @@ var gEmails = (() => {
 export const emailService = {
     getEmails,
     getEmailById,
+    changeReadStatus,
     // saveEmails,
     // getNextEmailsId 
 }
@@ -69,19 +70,29 @@ function getEmails() {
 function getEmailById(emailId) {
     const email = gEmails.find((email) => email.emailId === emailId);
     return Promise.resolve(email);
-  }
+}
 
-// function saveEmail(email) {
-//     if (car.id) {
-//         const idx = gCars.findIndex(currCar => currCar.id === car.id)
-//         gCars.splice(idx, 1, car)
-//     } else {
-//         car.id = Utils.getRandomId();
-//         car.createdAt = Date.now();
-//         gCars.unshift(car);
-//     }
-//     return Promise.resolve(car);
-// }
+
+function changeReadStatus(email){
+  console.log(email)
+email.isRead = true;
+const idx = gEmails.findIndex(currEmail => currEmail.emailId === email.emailId)
+gEmails.splice(idx, 1, email)
+
+}
+
+
+function saveEmail(email) {
+    if (car.id) {
+        const idx = gCars.findIndex(currCar => currCar.id === car.id)
+        gCars.splice(idx, 1, car)
+    } else {
+        car.id = Utils.getRandomId();
+        car.createdAt = Date.now();
+        gCars.unshift(car);
+    }
+    return Promise.resolve(car);
+}
 
 
 

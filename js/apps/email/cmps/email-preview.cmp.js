@@ -1,9 +1,9 @@
 export default {
     props: ['email'],
     template: `
-        <li v-bind:class="{ unread-email: isRead }" :class="unread-email" class="email-preview flex column space-between"  v-on:click="isRead = true">>
+        <li v-bind:class="{ unread: isRead }" class="email-preview flex column space-between" >
             <router-link :to="'/email/' + email.emailId">
-           <h3 class="title">{{email.subject}}</h3>
+            <h3 v-bind:class="{ active: !isRead}" class="title">{{email.subject}}</h3>
            </router-link>
         </li>
     `,
@@ -12,10 +12,11 @@ export default {
         isRead: null,
         }
     },
+    methods: {
+        
+    },
  created(){
-    // console.log('ggfgf');
-    // console.log(this.email.emailId);
-     this.isRead = email.isRead
-     //console.log(this.isRead)
+     this.isRead = this.email.isRead
  }
-};
+};  
+
