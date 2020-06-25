@@ -13,8 +13,13 @@ export const emailService = {
     getEmails,
     getEmailById,
     changeReadStatus,
-    // saveEmails,
+    saveToLocalStorage,
+    //saveEmails,
     // getNextEmailsId 
+}
+
+function saveToLocalStorage(){
+  Utils.storeToStorage('emails', gEmails)
 }
 
 

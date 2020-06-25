@@ -17,11 +17,12 @@ export default {
   },
   created() {
     this.loadEmail();
-   
+ 
   },
-  //   destroyed() {
-  //     console.log("CMP CarDetails Destroyed");
-  //   },
+   destroyed() {
+    console.log("CMP CarDetails Destroyed");
+    this.updateStorage();
+   },
   methods: {
     close() {
       this.$router.back();
@@ -34,11 +35,14 @@ export default {
         emailService.changeReadStatus(email);
       });
     },
+   updateStorage() {
+    emailService.saveToLocalStorage()
+   }
   },
   watch: {
     "$route.params.emailId"(newEmailId) {
-
       this.loadEmail();
+      this.updateStorage();
     },
   },
 };
