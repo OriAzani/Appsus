@@ -1,8 +1,8 @@
 import navBar from './cmps/app-nav-bar.cmp.js'
-import {myRouter} from './routes.js'
+import { myRouter } from './routes.js'
 
 new Vue({
-    el: '#app',
+    el: '#apps',
     router: myRouter,
     template: `
         <div class="flex column">
