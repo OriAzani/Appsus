@@ -1,5 +1,6 @@
 import { emailService } from "../services/email-service.js";
 import emailList from "../cmps/email-list.cmp.js";
+import emailCompose from "../cmps/email-compose.cmp.js";
 
 import emailNav from "../cmps/email-nav-bar-cmp.js";
 // import bookFilter from "../cmps/book-filter.cmp.js";
@@ -48,7 +49,8 @@ export default {
 
   components: {
     emailList,
-    emailNav
+    emailNav,
+    emailCompose
     //     bookFilter,
   },
 };
