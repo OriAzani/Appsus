@@ -1,4 +1,12 @@
 .active{
-color:red;
+color:rgb(54, 54, 54);
+font-weight: bolder;
+}
+
+li p{
+  margin:5px 0px;
+  padding:10px;
+  border-bottom: 0.5px solid lightgray;
+  color:rgb(94, 94, 94);
 }
 

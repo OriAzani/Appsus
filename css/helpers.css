@@ -19,9 +19,6 @@
 .column {
     flex-direction: column;
 }
-.wrap {
-    flex-wrap: wrap;
-}
 .flex-start {
     align-items: flex-start;
 }
@@ -32,11 +29,15 @@
     justify-content: flex-end;
 }
 
-
-
 .text-center {
     text-align: center;
 }
+
+.align-self-center{
+   justify-content: center;
+}
+
+
 
 .clean-list {
     list-style-type: none;

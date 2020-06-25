@@ -32,7 +32,6 @@
     justify-content: flex-end;
 }
 
-
 .align-self-start{
 align-self: flex-start;
 }
@@ -46,8 +45,10 @@ align-self: flex-start;
     margin: 0;
     padding: 0;
 }
+.center{
 
-
+align-content: center
+}
 .width-all {
     width: 100%;
 }

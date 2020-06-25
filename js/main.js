@@ -7,7 +7,7 @@ new Vue({
     template: `
         <div class="flex column">
             <header class="flex align-center space-between">
-                <h1>Welcome to Appsus!</h1>
+                <h1>AppSusita!</h1>
                 <nav-bar/>
             </header>
 

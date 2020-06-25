@@ -4,3 +4,25 @@
 /* --Import for cmps css files-- */
 @import './cmps/email-details.css';
 @import './cmps/email-preview.css';
+@import './cmps/email-nav-bar.css';
+@import './cmps/email-list.css';
+@import './cmps/email-filter.css';
+@import './cmps/email-compose.css';
+
+/* --Import for font files-- */
+
+*{
+    box-sizing: border-box;
+    font-family: monts-reg;
+}
+a{
+    text-decoration: none
+}
+
+.filter-input{
+  margin: 0 auto
+}
+
+.email-header{
+    border-top:  0.5px solid black;;
+}

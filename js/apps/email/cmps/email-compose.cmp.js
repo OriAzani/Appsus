@@ -2,14 +2,19 @@ import { emailService } from "../services/email-service.js";
 
 export default {
   template: `
-    <section class="emailCompose flex column">
+    <section class="email-compose flex column">
           <h2>New Message</h2>
+        
           <input type="text" placeholder="Send to..." v-model="emailToEdit.sendTo" />
           <input type="text" placeholder="cc..." v-model="emailToEdit.cc" />
           <input type="text" placeholder="subject..." v-model="emailToEdit.subject" />
           <input type="text" placeholder="body..." v-model="emailToEdit.body" />
-          {{body}}
-          <button class="align-self-start" @click='sendEmail'>SEND</button>
+          {{emailToEdit.body}}
+          <section class="flex space-between">
+            <button class="align-self-start" @click='sendEmail'>SEND</button>
+            <button class="align-self-start" @click="close"> X </button>
+          </section>
+
           </section>
     `,
 
@@ -30,6 +35,9 @@ export default {
   methods: {
     sendEmail() {
       emailService.saveEmail(this.emailToEdit);
+    },
+    close() {
+      this.$router.back();
     },
   },
   components: {

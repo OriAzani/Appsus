@@ -1,9 +1,4 @@
 @import './helpers.css';
 
 @import '../css/apps/email/email-main.css';
-
-
-
-*{
-    box-sizing: border-box;
-}
+@import './fonts.css';

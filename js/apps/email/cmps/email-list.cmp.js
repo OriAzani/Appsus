@@ -14,5 +14,9 @@ export default {
     },
     components: {
     emailPreview
+    },
+    created(){
+       console.log(this.emails);
+        
     }
 };

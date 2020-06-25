@@ -1,16 +1,22 @@
 import { emailService } from "../services/email-service.js";
 import emailList from "../cmps/email-list.cmp.js";
 import emailCompose from "../cmps/email-compose.cmp.js";
-
+import emailFilter from "../cmps/email-filter.cmp.js";
 import emailNav from "../cmps/email-nav-bar-cmp.js";
-// import bookFilter from "../cmps/book-filter.cmp.js";
 
 export default {
   template: `
-        <main class="email-app">
-        <email-Nav></email-Nav>
-          <!-- <book-filter @filter="setFilter"/> -->
-            <email-list :emails="emailsToShow"></email-list>           
+        <main class="email-app flex column">
+        
+        <section  class="email-header flex align-center">
+          <h1 class="logo">Email App</h1>
+          <email-filter class="filter-input"  @filter="setFilter"/></email-filter>
+        </section>
+
+        <section class="flex">
+          <email-nav  class="email-nav-bar" :emails="emails"></email-nav>
+          <email-list class="email-list":emails="emailsToShow"></email-list>           
+        </section>
             </main>
     `,
   data() {
@@ -22,24 +28,38 @@ export default {
   computed: {
     emailsToShow() {
       const filterBy = this.filterBy;
+      console.log(filterBy);
       if (!filterBy) return this.emails;
-      // var filteredEmails = this.emails.filter((email) => {
-      //     const amount = email.listPrice.amount;
-      //     if (
-      //         email.title.toLowerCase().includes(filterBy.byName.toLowerCase()) &&
-      //         amount >= filterBy.minPrice &&
-      //         amount <= filterBy.maxPrice
-      //     ) {
-      //         return email;
-      //     }
-      // });
-      // return filteredEmails;
+    
+     
+      switch (filterBy.boxToSearch) {
+        case "All":
+          return this.emails;
+          break;
+
+        case "Read":
+          return this.emails.filter((email) => {
+            email.isRead === true;
+          });
+          break;
+
+        case "UnRead":
+          return this.emails.filter((email) => {
+            email.isRead === false;
+          });
+          break;
+
+
+        default:
+          return this.emails;
+      }
     },
   },
+
   methods: {
-    // setFilter(filterBy) {
-    //     this.filterBy = filterBy;
-    // },
+    setFilter(filterBy) {
+      this.filterBy = filterBy;
+    },
   },
   created() {
     emailService.getEmails().then((emails) => {
@@ -50,7 +70,7 @@ export default {
   components: {
     emailList,
     emailNav,
-    emailCompose
-    //     bookFilter,
+    emailCompose,
+    emailFilter,
   },
 };

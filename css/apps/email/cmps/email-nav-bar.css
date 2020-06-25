@@ -1,0 +1,20 @@
+.email-nav-bar{
+    margin-right: 5px;
+    width: 200px;
+}
+
+.email-nav-bar a:first-child{
+color:black;
+border:0.3px solid lightgray;
+padding:5px 10px;
+margin:10px auto;
+border-radius:20px;
+}
+.email-nav-bar a:not(:first-child){
+color:black;
+border: 1px solid rgb(255, 255, 255);
+border-radius: 0px 20px 20px 0px ;
+padding: 8px;
+background-color: rgb(255, 223, 227);
+}
+
