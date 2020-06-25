@@ -17,11 +17,11 @@ export default {
     computed: {
         checkUnred() {
 
-            return this.emails.reduce((unreadCount, email) => {
-                if (!email.isRead) unreadCount++;
-                console.log(unreadCount);
+            return this.emails.reduce((unreadCounter, email) => {
+                if (!email.isRead) unreadCounter++;
+                console.log(unreadCounter);
 
-                return unreadCount;
+                return unreadCounter;
             }, 0);
 
         },
