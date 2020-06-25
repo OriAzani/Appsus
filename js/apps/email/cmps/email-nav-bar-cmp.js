@@ -2,6 +2,7 @@ import { emailService } from "../services/email-service.js";
 export default {
     template: `
     <nav>
+        <router-link to="email/nav/compose">Compose</router-link> 
         <router-link to="email/nav/inbox">inbox{{checkUnred}}</router-link> |
         <router-link to="email/nav/starred">starred</router-link> |
         <router-link to="email/nav/sent">sent Mail</router-link> | 

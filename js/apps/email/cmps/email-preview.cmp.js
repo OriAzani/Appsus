@@ -16,6 +16,8 @@ export default {
 
     },
     created() {
+        console.log(this.email);
+        
         this.isRead = this.email.isRead
     }
 };
