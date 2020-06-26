@@ -14,8 +14,9 @@ export default {
         </section>
 
         <section class="flex">
+          <email-second-nav  class="email-second-nav-bar" :emails="emails"></email-nav>
           <email-nav  class="email-nav-bar" :emails="emails"></email-nav>
-          <email-list class="email-list":emails="emailsToShow"></email-list>           
+          <email-list class="email-list" :emails="emailsToShow"></email-list>           
         </section>
             </main>
     `,
@@ -28,39 +29,30 @@ export default {
   computed: {
     emailsToShow() {
       const filterBy = this.filterBy;
-      console.log(filterBy);
       if (!filterBy) return this.emails;
-    
-     
-      switch (filterBy.boxToSearch) {
-        case "All":
-          return this.emails;
-          break;
-
-        case "Read":
+      else {
+        if (filterBy.boxToSearch === "Read") {
+          console.log("says read");
           return this.emails.filter((email) => {
-            email.isRead === true;
+            return email.isRead === true;
           });
-          break;
-
-        case "UnRead":
+        }
+        if (filterBy.boxToSearch === "UnRead") {
+          console.log("says Unread");
           return this.emails.filter((email) => {
-            email.isRead === false;
+            return email.isRead === false;
           });
-          break;
-
-
-        default:
-          return this.emails;
+        }
       }
     },
   },
-
   methods: {
     setFilter(filterBy) {
       this.filterBy = filterBy;
+      this.emailsToShow;
     },
   },
+
   created() {
     emailService.getEmails().then((emails) => {
       this.emails = emails;

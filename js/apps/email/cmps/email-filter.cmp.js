@@ -24,7 +24,6 @@ export default {
   methods: {
     emitFilter() {
       this.$emit("filter", this.filterBy);
-
     },
   },
 };

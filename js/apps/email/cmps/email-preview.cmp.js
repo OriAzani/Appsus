@@ -1,7 +1,7 @@
 export default {
   props: ["email"],
   template: `
-        <li v-bind:class="{ unread: isRead }" class="email-preview flex column space-between" >
+        <li  class="email-preview flex column space-between" >
             <router-link :to="'/email/emailId/' + email.emailId">
 
             <!-- <section v-bind:class="{active: !isRead}" class="preview-li flex column">
@@ -12,12 +12,11 @@ export default {
             </section>
              -->
             <section class="preview-li flex column">
-              <p v-bind:class="{active: !isRead}" class="from-p"> <{{email.from}}> </p>
+              <p class="from-p"> <{{email.from}}> </p>
               <section class="bottom-two flex space-between flex-end ">
-              <p v-bind:class="{active: !isRead}" >{{email.subject}}</p> 
-              <p v-bind:class="{active: !isRead}" >{{this.convertedTime}}</p>
+              <p>{{email.subject}}</p> 
+              <p>{{this.convertedTime}}</p>
             </section>
-
 
             </section>
            </router-link>
@@ -37,8 +36,8 @@ export default {
   },
   created() {
     this.isRead = this.email.isRead;
-    console.log(this.isRead);
-    
+    console.log(this.email.subject, this.isRead);
+
     this.convertTime();
   },
 };

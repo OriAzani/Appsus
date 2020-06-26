@@ -15,6 +15,7 @@ export const emailService = {
   changeReadStatus,
   saveToLocalStorage,
   saveEmail,
+  eraseEmail,
   //saveEmails,
   // getNextEmailsId
 };
@@ -30,7 +31,7 @@ function _createDefaultEmails() {
       subject: "Wassap?",
       body: "Pick up! im starred",
       isRead: false,
-      sentAt: Date.now(),
+      sentAt: 1522176311400,
       emailId: Utils.getRandomId(),
       isSent: false,
       isStarred: true,
@@ -41,7 +42,7 @@ function _createDefaultEmails() {
       subject: "MA Nishma?",
       body: "Shtok! im draft",
       isRead: false,
-      sentAt: Date.now(),
+      sentAt: 1192151211400,
       emailId: Utils.getRandomId(),
       isSent: false,
       isStarred: false,
@@ -52,7 +53,7 @@ function _createDefaultEmails() {
       subject: "Salam",
       body: `ata beseder ata!`,
       isRead: true,
-      sentAt: Date.now(),
+      sentAt: 1492176311400,
       emailId: Utils.getRandomId(),
       isSent: false,
       isStarred: false,
@@ -60,11 +61,12 @@ function _createDefaultEmails() {
     },
     {
       from: "kapara@gmail.wow",
-      subject: "New music from artists you love, with Marvin Gaye on your Release Radar now",
+      subject:
+        "New music from artists you love, with Marvin Gaye on your Release Radar now",
       body: `Your Release Radar is here: Fresh tracks by your favorite artists, including Marvin Gaye, 
                 on a personalized playlist that we update just for you every Friday. Listen to it now on Spotify.`,
       isRead: false,
-      sentAt: Date.now(),
+      sentAt: 1592126311400,
       emailId: Utils.getRandomId(),
       isSent: false,
       isStarred: false,
@@ -77,7 +79,7 @@ function _createDefaultEmails() {
          we'd like to know how we did. Your feedback on the product quality is important to us and our community. 
          You can upload a photo with your review, or post on Instagram using #ShareMySociety6.`,
       isRead: false,
-      sentAt: Date.now(),
+      sentAt: 1592176311400,
       emailId: Utils.getRandomId(),
       isSent: false,
       isStarred: false,
@@ -178,14 +180,13 @@ and an app to fetch data from a Star Wars API and parse the JSON response.
       sentAt: Date.now(),
       emailId: Utils.getRandomId(),
       isSent: false,
-      isStarred:false,
+      isStarred: false,
       isDraft: false,
     },
     {
       from: "ImperialCocktailBar@Imperial.com",
       subject: "Ramos Gin Fizz Recipe",
-      body: 
-      `
+      body: `
       2d Orange Bitters
       2d Orange flower water
       15 Lemon
@@ -194,13 +195,12 @@ and an app to fetch data from a Star Wars API and parse the JSON response.
       20 Egg white
       25 Simple syrup
       45 Bombay gin
-      Soda`
-      ,
+      Soda`,
       isRead: false,
       sentAt: Date.now(),
       emailId: Utils.getRandomId(),
       isSent: false,
-      isStarred:true,
+      isStarred: true,
       isDraft: false,
     },
     {
@@ -219,23 +219,21 @@ and an app to fetch data from a Star Wars API and parse the JSON response.
       sentAt: Date.now(),
       emailId: Utils.getRandomId(),
       isSent: false,
-      isStarred:false,
+      isStarred: false,
       isDraft: false,
     },
     {
       from: "Guitarplayer@gibson",
       subject: "New Gibson L5",
-      body: 
-     ` The Gibson L-5 guitar was first produced in 1922 by the Gibson Guitar Corporation, 
+      body: ` The Gibson L-5 guitar was first produced in 1922 by the Gibson Guitar Corporation, 
      then of Kalamazoo, Michigan, under the direction of acoustical engineer and designer Lloyd Loar, 
      and has been in production ever since. It was considered the premier guitar of the company during the big band era. 
-     It was originally offered as an acoustic instrument, with electric models not made available until the 1940s.`
-      ,
+     It was originally offered as an acoustic instrument, with electric models not made available until the 1940s.`,
       isRead: true,
       sentAt: Date.now(),
       emailId: Utils.getRandomId(),
       isSent: false,
-      isStarred:false,
+      isStarred: false,
       isDraft: false,
     },
   ];
@@ -252,7 +250,7 @@ function getEmailById(emailId) {
 }
 
 function changeReadStatus(email) {
-  console.log(email);
+  console.log("change read status", email);
   email.isRead = true;
   email.sentAt = Date.now();
   const idx = gEmails.findIndex(
@@ -272,6 +270,15 @@ function saveEmail(email) {
   });
 }
 
+function eraseEmail(email) {
+  console.log("in", email);
+  const idx = gEmails.findIndex(
+    (currEmail) => currEmail.emailId === email.emailId
+  );
+  console.log(idx)
+  gEmails.splice(idx, 1);
+  saveToLocalStorage()
+}
 // function saveEmail(email) {
 //   if (car.id) {
 //     const idx = gCars.findIndex((currCar) => currCar.id === car.id);
