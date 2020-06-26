@@ -11,29 +11,41 @@ var gNotes = (() => {
 
 export const noteService = {
     getNotes,
-    // getEmailById,
-    // changeReadStatus,
     saveToLocalStorage,
-    //saveEmails,
-    // getNextEmailsId 
+    saveNote,
+    getEmptyNote
 }
 
 function saveToLocalStorage() {
     Utils.storeToStorage('notes', gNotes)
 }
 
+function getEmptyNote() {
+    return {
+        id: 101,
+        type: "",
+        isPinned: true,
+        info: {
+            txt: ""
+        }
+    };
+}
+
 
 function _createDefaultNotes() {
     return [{
-            type: "NoteText",
+            id: 101,
+            type: "noteText",
             isPinned: true,
             info: {
                 txt: "Fullstack Me Baby!"
             }
         }, {
-            type: "NoteImg",
+            id: 102,
+            type: "noteImg",
+            isPinned: true,
             info: {
-                url: "http://some-img/me",
+                url: "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg",
                 title: "Me playing Mi"
             },
             style: {
@@ -41,7 +53,9 @@ function _createDefaultNotes() {
             }
         },
         {
-            type: "NoteTodos",
+            id: 103,
+            type: "noteTodos",
+            isPinned: true,
             info: {
                 label: "How was it:",
                 todos: [
@@ -57,6 +71,28 @@ function getNotes() {
 
     return Promise.resolve(gNotes);
 }
+
+function saveNote(note) {
+    note.createdAt = Date.now();
+    note.id = Utils.getRandomId();
+    console.log(gNotes);
+    getNotes().then((notes) => {
+        notes.push(note);
+        Utils.storeToStorage("notes", notes);
+        console.log(note);
+    });
+}
+// function saveNote(note) {
+//     if (note.id) {
+//         const idx = gNotes.findIndex(currNote => currNote.id === note.id)
+//         gNotes.splice(idx, 1, note)
+//     } else {
+//         note.id = Utils.getRandomId();
+//         note.createdAt = Date.now();
+//         gNotes.unshift(note);
+//     }
+//     return Promise.resolve(note);
+// }
 
 // function getEmailById(emailId) {
 //     const email = gEmails.find((email) => email.emailId === emailId);

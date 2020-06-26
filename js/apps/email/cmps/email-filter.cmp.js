@@ -1,5 +1,5 @@
 export default {
-  template: `
+    template: `
         <section class="email-filter">
             <!-- <h2 @click="$emit('click')">Search!</h2> -->
            
@@ -13,18 +13,18 @@ export default {
             </select>
         </section>
     `,
-  data() {
-    return {
-      filterBy: {
-        searchStr: "",
-        boxToSearch: "",
-      },
-    };
-  },
-  methods: {
-    emitFilter() {
-      this.$emit("filter", this.filterBy);
-
+    data() {
+        return {
+            filterBy: {
+                searchStr: "",
+                boxToSearch: "",
+            },
+        };
     },
-  },
+    methods: {
+        emitFilter() {
+            this.$emit("filter", this.filterBy);
+
+        },
+    },
 };

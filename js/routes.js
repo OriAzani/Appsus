@@ -7,6 +7,7 @@ import emailStarred from './apps/email/cmps/email-starred.cmp.js';
 import emailSent from './apps/email/cmps/email-sent.cmp.js';
 import emailDrafts from './apps/email/cmps/email-drafts.cmp.js';
 import noteHomePage from './apps/note/pages/note-app.cmp.js';
+
 import booksHomePage from './apps/books/pages/books-home.cmp.js';
 
 
@@ -47,6 +48,7 @@ const myRoutes = [{
         path: '/note',
         component: noteHomePage
     },
+
     {
         path: '/books',
         component: booksHomePage
