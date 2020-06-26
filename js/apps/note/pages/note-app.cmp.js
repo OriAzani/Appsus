@@ -1,13 +1,14 @@
 import { noteService } from "../services/note-service.js"
 import noteList from "../cmps/note-list.cmp.js";
-
+import noteCreate from "../cmps/note-create.cmp.js";
 // import emailNav from "../cmps/email-nav-bar-cmp.js";
 // import bookFilter from "../cmps/book-filter.cmp.js";
 
 export default {
     template: `
              <main class="note-app">
-            <note-list :notes="notesToShow"></note-list>           
+             <note-create></note-create>   
+             <note-list :notes="notesToShow"></note-list>      
             </main>
     `,
     data() {
@@ -31,5 +32,6 @@ export default {
     },
     components: {
         noteList,
+        noteCreate,
     },
 };

@@ -59,8 +59,10 @@ function _createDefaultNotes() {
             info: {
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
+                    { txt: "Do that", doneAt: Date.now(), },
+                    { txt: "Do this", doneAt: Date.now(), },
+                    { txt: "Do something", doneAt: Date.now(), },
+                    { txt: "Do nothing", doneAt: Date.now(), },
                 ]
             }
         }
@@ -68,8 +70,7 @@ function _createDefaultNotes() {
 }
 
 function getNotes() {
-
-    return Promise.resolve(gNotes);
+ return Promise.resolve(gNotes);
 }
 
 function saveNote(note) {
@@ -77,9 +78,9 @@ function saveNote(note) {
     note.id = Utils.getRandomId();
     console.log(gNotes);
     getNotes().then((notes) => {
-        notes.push(note);
+        notes.unshift(note);
         Utils.storeToStorage("notes", notes);
-        console.log(note);
+        console.log(notes);
     });
 }
 // function saveNote(note) {
