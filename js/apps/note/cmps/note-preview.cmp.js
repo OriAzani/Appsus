@@ -5,9 +5,8 @@ import noteVideo from './note-video.cmp.js';
 export default {
     props: ['note'],
     template: `
-      <li class="flex space-between wrap">
-      <h2 v-if="note.info.title">{{note.info.title}}</h2>
-      <component :is="note.type"  :info="note.info"></component>
+      <li >
+      <component  :is="note.type"  :info="note.info"></component>
       </li>
       
     `,

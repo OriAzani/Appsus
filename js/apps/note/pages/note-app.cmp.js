@@ -7,7 +7,8 @@ import noteCreate from "../cmps/note-create.cmp.js";
 export default {
     template: `
              <main class="note-app">
-             <note-create></note-create>   
+             <note-create></note-create>  
+
              <note-list :notes="notesToShow"></note-list>      
             </main>
     `,
@@ -21,6 +22,8 @@ export default {
         notesToShow() {
             const filterBy = this.filterBy;
             if (!filterBy) return this.notes;
+            console.log(this.notes);
+
         },
     },
     created() {
