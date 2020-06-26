@@ -2,3 +2,7 @@
     font-family: monts-reg;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
+@font-face {
+    font-family: monts-semi-bold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}

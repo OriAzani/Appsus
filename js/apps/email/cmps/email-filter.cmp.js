@@ -2,8 +2,7 @@ export default {
   template: `
         <section class="email-filter">
             <!-- <h2 @click="$emit('click')">Search!</h2> -->
-           
-            <input type="text" placeholder="search?" v-model="filterBy.searchStr" @input="emitFilter"/> 
+            <input type="text" placeholder=" 🔍 Search "  v-model="filterBy.searchStr" @input="emitFilter"/> 
             
             <select v-model="filterBy.boxToSearch" @change="emitFilter">
             <option disabled value="">All</option>           
@@ -24,7 +23,6 @@ export default {
   methods: {
     emitFilter() {
       this.$emit("filter", this.filterBy);
-
     },
   },
 };

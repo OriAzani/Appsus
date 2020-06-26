@@ -1,12 +1,22 @@
 .active{
-color:rgb(54, 54, 54);
-font-weight: bolder;
+  color:rgb(61, 61, 61);
+font-family:monts-semi-bold;
 }
 
 li p{
-  margin:5px 0px;
-  padding:10px;
-  border-bottom: 0.5px solid lightgray;
-  color:rgb(94, 94, 94);
+  font-size: 0.8rem;
+  color:rgb(94, 94, 94); 
+  margin:2px;
 }
 
+.from-p{
+  font-size: .5rem;
+}
+
+.bottom-two{
+  border-bottom: 0.5px solid lightgray;
+}  
+  
+a{
+  padding: 5px;
+}

@@ -1,10 +1,11 @@
 import { emailService } from "../services/email-service.js";
+import emailNav from "./email-nav-bar-cmp.js";
 
 export default {
   template: `
     <section class="email-compose flex column">
           <h2>New Message</h2>
-        
+
           <input type="text" placeholder="Send to..." v-model="emailToEdit.sendTo" />
           <input type="text" placeholder="cc..." v-model="emailToEdit.cc" />
           <input type="text" placeholder="subject..." v-model="emailToEdit.subject" />
@@ -29,6 +30,7 @@ export default {
         isSent: true,
         isStarred: false,
         isDraft: false,
+        sendTo:''
       },
     };
   },
@@ -42,5 +44,6 @@ export default {
   },
   components: {
     emailService,
+    emailNav
   },
 };
