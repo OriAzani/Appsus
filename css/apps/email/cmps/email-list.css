@@ -1,3 +1,8 @@
-.email-list{
-border:1px solid black;
+.email-list {
+margin:10px;
+    /* padding: 10px; */
+    width: 800px;
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid #ccc;
 }

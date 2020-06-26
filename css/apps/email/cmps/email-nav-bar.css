@@ -1,16 +1,20 @@
 .email-nav-bar{
     margin-right: 5px;
-    width: 200px;
+    width: 300px;
 }
 
 .email-nav-bar a:first-child{
+width: 190px;
+font-size: 1.5rem;
 color:black;
 border:0.3px solid lightgray;
-padding:5px 10px;
+padding:10px 15px;
 margin:10px auto;
-border-radius:20px;
+border-radius:30px;
 }
+
 .email-nav-bar a:not(:first-child){
+margin:2px;
 color:black;
 border: 1px solid rgb(255, 255, 255);
 border-radius: 0px 20px 20px 0px ;
