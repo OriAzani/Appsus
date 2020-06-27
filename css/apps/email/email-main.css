@@ -11,9 +11,12 @@
 
 /* --Import for font files-- */
 
-*{
+* {
     box-sizing: border-box;
     font-family: monts-reg;
+}
+.email-app {
+margin:0px 30px;
 }
 a{
     text-decoration: none
@@ -23,6 +26,6 @@ a{
   margin: 0 auto
 }
 
-.email-header{
-    border-top:  0.5px solid black;;
-}
+/* footer{
+    marg
+} */

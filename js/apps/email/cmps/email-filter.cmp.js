@@ -6,7 +6,8 @@ export default {
             <input type="text" placeholder="🔍 Search "  v-model="filterBy.searchStr" @input="emitFilter"/> 
             
             <select v-model="filterBy.boxToSearch" @change="emitFilter">
-            <option disabled value="">All</option>           
+            <!-- <option disabled value="">All</option>            -->
+            <option>All</option>
             <option>Read</option>
             <option>UnRead</option>
     

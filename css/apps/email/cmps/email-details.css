@@ -1,0 +1,29 @@
+.email-details {
+    margin: 0px 100px;
+    box-sizing: border-box;
+}
+
+.details-body {
+    padding-top: 10px;
+    border-top: .5px solid #ccc;
+    box-sizing: border-box;
+}
+
+.email-details button {
+    font-size: 15px;
+    outline: none;
+    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+.details-btns button {
+    padding: 5px 9px;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: 0.5px solid rgb(255, 255, 255);
+}
+.details-btns button:hover {
+background-color: rgb(255, 206, 214);
+}

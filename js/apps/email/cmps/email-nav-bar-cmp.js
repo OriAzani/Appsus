@@ -1,4 +1,5 @@
 import { emailService } from "../services/email-service.js";
+import {eventBus} from '../services/event-bus-service.js'
 export default {
     props:['emails'],
     template: `
@@ -7,13 +8,17 @@ export default {
         <router-link to="email/nav/inbox"><i class="fas fa-inbox"></i>   Inbox  {{checkUnread}}</router-link> 
         <router-link to="email/nav/starred"><i class="far fa-star"></i>  Starred</router-link> 
         <router-link to="email/nav/sent"><i class="far fa-share-square"></i> Sent Mail</router-link> 
-        <router-link to="email/nav/drafts"><i class="fab fa-firstdraft"></i> Drafts</router-link> 
+        <router-link  to="email/nav/drafts"><i class="fab fa-firstdraft"></i> Drafts</router-link>  
     </nav>
     `,
-
+     methods:{
+     checkNavType(){
+         console.log('dfdfdfdfdfdfd')
+         eventBus.$emit('navigation',`drafts`)
+     }
+     },
     computed: {
         checkUnread() {
-
             return this.emails.reduce((unreadCounter, email) => {
                 if (!email.isRead) unreadCounter++;
 
@@ -27,4 +32,7 @@ export default {
         //     this.emails = emails;        
         //});
     //}
+    components:{
+        eventBus
+    }
 }

@@ -1,14 +1,14 @@
-.unread{
-  color:rgb(206, 0, 0);
-font-family:monts-semi-bold;
-}
 
 li p{
   font-size: 0.8rem;
   color:rgb(94, 94, 94); 
   margin:2px;
+  width: 200px;
 }
 
+li p:last-child{
+  width: 250px;
+}
 .from-p{
   font-size: .5rem;
 }
@@ -16,7 +16,38 @@ li p{
 .bottom-two{
   border-bottom: 0.5px solid lightgray;
 }  
-  
+/* .bottom-two :nth-child(2){
+padding-right: 100px;
+} */
+.email-body{
+  width: 400px;
+}
+
 a{
   padding: 5px;
+}
+
+.preview-erase{
+  font-size: 15px;
+  outline:none;
+  box-shadow: none;
+  background-color: rgb(255, 255, 255); 
+  border: none;
+  cursor: pointer;
+}
+.preview-star{
+  font-size: 15px;
+  outline:none;
+  box-shadow: none;
+  background-color: rgb(255, 255, 255); 
+  border: none;
+  cursor: pointer;
+}
+.preview-read{
+  font-size: 15px;
+  outline:none;
+  box-shadow: none;
+  background-color: rgb(255, 255, 255); 
+  border: none;
+  cursor: pointer;
 }

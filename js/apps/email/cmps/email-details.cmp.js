@@ -3,10 +3,11 @@ import { emailService } from "../services/email-service.js";
 export default {
   template: `
         <section class="email-details" v-if="email">
-            <button @click="close"> X </button>
-            <button @click="eraseEmail"> <i class="fas fa-trash-alt"></i> </button>
+          <section class="details-btns flex justify-end">
+            <button @click="close"> <i class="fas fa-times"></i></button>
+            <button  @click="eraseEmail" > <i class="fas fa-trash-alt"></i> </button>
+          </section>
         
-
             <h2 class="details-subject">{{email.subject}}</h2>
 
             <pre class="details-createdAt">{{this.convertedTime}}</pre>
@@ -51,7 +52,7 @@ export default {
     updateStorage() {
       emailService.saveToLocalStorage();
     },
-    eraseEmail(){``
+    eraseEmail(){
       emailService.eraseEmail(this.email)
       this.close()
     }

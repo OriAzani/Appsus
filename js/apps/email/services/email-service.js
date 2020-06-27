@@ -62,9 +62,12 @@ function _createDefaultEmails() {
     {
       from: "kapara@gmail.wow",
       subject:
-        "New music from artists you love, with Marvin Gaye on your Release Radar now",
-      body: `Your Release Radar is here: Fresh tracks by your favorite artists, including Marvin Gaye, 
-                on a personalized playlist that we update just for you every Friday. Listen to it now on Spotify.`,
+      "New music from artists you love, with Marvin Gaye on your Release Radar now",
+      body: 
+      `Your Release Radar is here: Fresh tracks by your favorite artists,
+       including Marvin Gaye,
+       on a personalized playlist that we update just for you every Friday. 
+       Listen to it now on Spotify.`,
       isRead: false,
       sentAt: 1592126311400,
       emailId: Utils.getRandomId(),
@@ -75,9 +78,10 @@ function _createDefaultEmails() {
     {
       from: "csshitler@gmail.com",
       subject: "Did you love it? Let us know!",
-      body: `Now that you've got that sweet Society6 Highland Cow in a Vintage Bathtub (bw) art print in hand, 
-         we'd like to know how we did. Your feedback on the product quality is important to us and our community. 
-         You can upload a photo with your review, or post on Instagram using #ShareMySociety6.`,
+      body: 
+      `Now that you've got that sweet Society6 Highland Cow in a Vintage Bathtub (bw) art print in hand, 
+      we'd like to know how we did. Your feedback on the product quality is important to us and our community. 
+      You can upload a photo with your review, or post on Instagram using #ShareMySociety6.`,
       isRead: false,
       sentAt: 1592176311400,
       emailId: Utils.getRandomId(),
@@ -124,7 +128,8 @@ function _createDefaultEmails() {
       subject: "Check Your Box!",
       body: `	Hi ori,
 
-      A new computer just signed in to your Dropbox account. To help keep your account secure, let us know if this is you.
+      A new computer just signed in to your Dropbox account. 
+      To help keep your account secure, let us know if this is you.
       
       `,
       isRead: false,
@@ -138,11 +143,23 @@ function _createDefaultEmails() {
       from: "wow@comedy.com",
       subject: "Joke of The Day!",
       body: `	
-Hi ori,
-It seems like everywhere you look, companies are adding Go to their codebases (including us at Frontend Masters slightly smiling face). It makes sense: Go is an efficient language that specializes in concurrency, with the goal of keeping syntax clean and simple. It also has a flexed bicepsbooks powerful standard library.
-Brenna Martenson, your instructor for the new Go for JavaScript Developers course, works as a frontend engineer at Highwing, a company based in Denver, Colorado. Through her experience shipping Go code for Highwing’s backend, you’ll learn the ins and outs of the language from a JavaScript developer’s perspective.
-The course will give you an intro to sport utility vehiclehamster the Go language, including its history, installation, and basic syntax. Then you’ll learn how to use a few of the more complex features of the language, like structs, pointers, methods, and interfaces. After that, you’ll get to build a few small apps using core parts of the language, including a web server with endpoints to collect form data that makes use of Go page templates, 
-and an app to fetch data from a Star Wars API and parse the JSON response.
+      Hi ori,
+      It seems like everywhere you look, companies are adding Go to their codebases 
+      (including us at Frontend Masters slightly smiling face). 
+      It makes sense: Go is an efficient language that specializes in concurrency, 
+      with the goal of keeping syntax clean and simple. 
+      It also has a flexed bicepsbooks powerful standard library.
+      Brenna Martenson, your instructor for the new Go for JavaScript Developers course, 
+      works as a frontend engineer at Highwing, a company based in Denver, 
+      Colorado. Through her experience shipping Go code for Highwing’s backend, 
+      you’ll learn the ins and outs of the language from a JavaScript developer’s perspective.
+      The course will give you an intro to sport utility vehiclehamster the Go language, 
+      including its history, installation, and basic syntax. 
+      Then you’ll learn how to use a few of the more complex features of the language, 
+      like structs, pointers, methods, and interfaces.
+      After that, you’ll get to build a few small apps using core parts of the language, 
+      including a web server with endpoints to collect form data that makes use of Go page templates, 
+      and an app to fetch data from a Star Wars API and parse the JSON response.
       `,
       isRead: false,
       sentAt: Date.now(),

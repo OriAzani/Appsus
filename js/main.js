@@ -6,7 +6,7 @@ new Vue({
     router: myRouter,
     template: `
         <div class="flex column">
-            <header class="flex align-center space-between">
+            <header class="main-header flex align-center space-between">
                 <h1>AppSusita!</h1>
                 <nav-bar/>
             </header>
@@ -15,8 +15,9 @@ new Vue({
                 <router-view />
             </main>
 
-            <footer>
-                coffeerights 2020
+            <footer class="flex column">
+               <p> Coffeerights 2020 </p>
+               <p>Dolev Tsfoni & Ori Azani</p>
             </footer>
         </div>
     `,
