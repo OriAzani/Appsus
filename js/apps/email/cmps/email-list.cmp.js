@@ -1,5 +1,5 @@
 import emailPreview from './email-preview.cmp.js';
-// import {eventBus} from '../services/event-bus-service.js'
+
 
 export default {
     props: ["emails"],
@@ -16,13 +16,6 @@ export default {
     },
     components: {
         emailPreview,
-        // eventBus
     },
-    created() {
-        console.log(this.emails);
-        // eventBus.$on('navigation',navigation =>{
-        //     this.navigation = navigation;
-        //     console.log('dfdfdfdfdfd',this.navigation);
-        // })
-    }
+
 };

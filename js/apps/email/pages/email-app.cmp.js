@@ -17,7 +17,7 @@ export default {
 
         <section class="flex">
           <!-- <email-second-nav  class="email-second-nav-bar" :emails="emails"></email-nav> -->
-          <email-nav class="email-nav-bar" :emails="emails"></email-nav>
+          <email-nav @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
           <email-list class="email-list" :emails="emailsToShow"></email-list>                   
         </section>
             </main>
@@ -29,6 +29,7 @@ export default {
         };
 
     },
+
     computed: {
         emailsToShow() {
             const filterBy = this.filterBy;
@@ -37,13 +38,6 @@ export default {
 
             else {
 
-                if (filterBy.boxToSearch === "Draft") {
-                    console.log('in Draft')
-                    var filteredEmails = this.emails.filter((email) => {
-                        return (email.isRead === true) && (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
-                    });
-                    return filteredEmails
-                }
                 if (filterBy.boxToSearch === "Read") {
                     console.log('in Read')
                     var filteredEmails = this.emails.filter((email) => {
@@ -71,6 +65,12 @@ export default {
             this.filterBy = filterBy;
             this.emailsToShow;
         },
+        setStatus(status) {
+            this.emails = emailService.getEmailsByStatus(status)
+            console.log(this.emails);
+
+        }
+
     },
 
 

@@ -25,23 +25,23 @@ const myRoutes = [{
         component: emailDetails
     },
     {
-        path: '/email/nav/compose',
+        path: '/email/compose',
         component: emailCompose
     },
     {
-        path: '/email/nav/inbox',
+        path: '/email/inbox',
         component: emailInbox
     },
     {
-        path: '/email/nav/starred',
+        path: '/email/starred',
         component: emailStarred
     },
     {
-        path: '/email/nav/sent',
+        path: '/email/sent',
         component: emailSent
     },
     {
-        path: '/email/nav/drafts',
+        path: '/email/drafts',
         component: emailDrafts
     },
     {

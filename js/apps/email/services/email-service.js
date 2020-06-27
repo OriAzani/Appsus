@@ -10,89 +10,96 @@ var gEmails = (() => {
 })();
 
 export const emailService = {
-  getEmails,
-  getEmailById,
-  changeReadStatus,
-  saveToLocalStorage,
-  saveEmail,
-  eraseEmail,
-  //saveEmails,
-  // getNextEmailsId
+    getEmails,
+    getEmailById,
+    changeReadStatus,
+    saveToLocalStorage,
+    saveEmail,
+    eraseEmail,
+    getEmailsByStatus,
+    //saveEmails,
+    // getNextEmailsId
 };
+
+function getEmailsByStatus(status) {
+
+    if (status === 'drafts') return gEmails.filter(email => !email.isSent)
+
+    if (status === 'inbox') return gEmails.filter(email => email.isDraft)
+    if (status === 'starred') return gEmails.filter(email => email.isStarred)
+    if (status === 'sent') return gEmails.filter(email => email.isSent)
+}
+
 
 function saveToLocalStorage() {
     Utils.storeToStorage("emails", gEmails);
 }
 
 function _createDefaultEmails() {
-  return [
-    {
-      from: "cucumber@gmail.com",
-      subject: "Wassap?",
-      body: "Pick up! im starred",
-      isRead: false,
-      sentAt: 1522176311400,
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: true,
-      isDraft: false,
-    },
-    {
-      from: "Shimi@gmail.com",
-      subject: "MA Nishma?",
-      body: "Shtok! im draft",
-      isRead: false,
-      sentAt: 1192151211400,
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: true,
-    },
-    {
-      from: "rick@gmail.com",
-      subject: "Salam",
-      body: `ata beseder ata!`,
-      isRead: true,
-      sentAt: 1492176311400,
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-    {
-      from: "kapara@gmail.wow",
-      subject:
-      "New music from artists you love, with Marvin Gaye on your Release Radar now",
-      body: 
-      `Your Release Radar is here: Fresh tracks by your favorite artists,
+    return [{
+            from: "cucumber@gmail.com",
+            subject: "Wassap?",
+            body: "Pick up! im starred",
+            isRead: false,
+            sentAt: 1522176311400,
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: true,
+        },
+        {
+            from: "Shimi@gmail.com",
+            subject: "MA Nishma?",
+            body: "Shtok! im draft",
+            isRead: false,
+            sentAt: 1192151211400,
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: true,
+        },
+        {
+            from: "rick@gmail.com",
+            subject: "Salam",
+            body: `ata beseder ata!`,
+            isRead: true,
+            sentAt: 1492176311400,
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "kapara@gmail.wow",
+            subject: "New music from artists you love, with Marvin Gaye on your Release Radar now",
+            body: `Your Release Radar is here: Fresh tracks by your favorite artists,
        including Marvin Gaye,
        on a personalized playlist that we update just for you every Friday. 
        Listen to it now on Spotify.`,
-      isRead: false,
-      sentAt: 1592126311400,
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-    {
-      from: "csshitler@gmail.com",
-      subject: "Did you love it? Let us know!",
-      body: 
-      `Now that you've got that sweet Society6 Highland Cow in a Vintage Bathtub (bw) art print in hand, 
+            isRead: false,
+            sentAt: 1592126311400,
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "csshitler@gmail.com",
+            subject: "Did you love it? Let us know!",
+            body: `Now that you've got that sweet Society6 Highland Cow in a Vintage Bathtub (bw) art print in hand, 
       we'd like to know how we did. Your feedback on the product quality is important to us and our community. 
       You can upload a photo with your review, or post on Instagram using #ShareMySociety6.`,
-      isRead: false,
-      sentAt: 1592176311400,
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-    {
-      from: "avocado@avocode.com",
-      subject: "Holy guacamole@%#$%",
-      body: `
+            isRead: false,
+            sentAt: 1592176311400,
+            emailId: Utils.getRandomId(),
+            isSent: true,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "avocado@avocode.com",
+            subject: "Holy guacamole@%#$%",
+            body: `
       Hello Ori,
       Today is the last day of your free trial. Time flies, right?
       If you don't purchase a subscription, you and your team will lose access to Avocode.
@@ -105,7 +112,7 @@ function _createDefaultEmails() {
             sentAt: Date.now(),
             emailId: Utils.getRandomId(),
             isSent: false,
-            isStarred: true,
+            isStarred: false,
             isDraft: false,
         },
         {
@@ -120,7 +127,7 @@ function _createDefaultEmails() {
             sentAt: Date.now(),
             emailId: Utils.getRandomId(),
             isSent: false,
-            isStarred: true,
+            isStarred: false,
             isDraft: false,
         },
         {
@@ -132,17 +139,17 @@ function _createDefaultEmails() {
       To help keep your account secure, let us know if this is you.
       
       `,
-      isRead: false,
-      sentAt: Date.now(),
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: true,
-      isDraft: false,
-    },
-    {
-      from: "wow@comedy.com",
-      subject: "Joke of The Day!",
-      body: `	
+            isRead: false,
+            sentAt: Date.now(),
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "wow@comedy.com",
+            subject: "Joke of The Day!",
+            body: `	
       Hi ori,
       It seems like everywhere you look, companies are adding Go to their codebases 
       (including us at Frontend Masters slightly smiling face). 
@@ -193,17 +200,17 @@ function _createDefaultEmails() {
       Take a guided tour through the Pen editor
       
       `,
-      isRead: true,
-      sentAt: Date.now(),
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-    {
-      from: "ImperialCocktailBar@Imperial.com",
-      subject: "Ramos Gin Fizz Recipe",
-      body: `
+            isRead: true,
+            sentAt: Date.now(),
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "ImperialCocktailBar@Imperial.com",
+            subject: "Ramos Gin Fizz Recipe",
+            body: `
       2d Orange Bitters
       2d Orange flower water
       15 Lemon
@@ -213,17 +220,17 @@ function _createDefaultEmails() {
       25 Simple syrup
       45 Bombay gin
       Soda`,
-      isRead: false,
-      sentAt: Date.now(),
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: true,
-      isDraft: false,
-    },
-    {
-      from: "udacity@udc.com",
-      subject: "Hi from Udacity!?",
-      body: `
+            isRead: false,
+            sentAt: Date.now(),
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "udacity@udc.com",
+            subject: "Hi from Udacity!?",
+            body: `
       Check out our free course: Product Management Interview Preparation!
       This course is ideal for anyone looking to upgrade their PM interviewing skills, or break into the product management field, and learn best practices for product management interviews. Complete this course and be equipped to land your dream role in product management!   
       What will you learn?
@@ -232,28 +239,28 @@ function _createDefaultEmails() {
       See what a day in the life looks like for Product Managers in different specializations
       Get additional practice questions to prepare you to ace your next PM interview
       ACE YOUR INTERVIEW`,
-      isRead: true,
-      sentAt: Date.now(),
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-    {
-      from: "Guitarplayer@gibson",
-      subject: "New Gibson L5",
-      body: ` The Gibson L-5 guitar was first produced in 1922 by the Gibson Guitar Corporation, 
+            isRead: true,
+            sentAt: Date.now(),
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+        {
+            from: "Guitarplayer@gibson",
+            subject: "New Gibson L5",
+            body: ` The Gibson L-5 guitar was first produced in 1922 by the Gibson Guitar Corporation, 
      then of Kalamazoo, Michigan, under the direction of acoustical engineer and designer Lloyd Loar, 
      and has been in production ever since. It was considered the premier guitar of the company during the big band era. 
      It was originally offered as an acoustic instrument, with electric models not made available until the 1940s.`,
-      isRead: true,
-      sentAt: Date.now(),
-      emailId: Utils.getRandomId(),
-      isSent: false,
-      isStarred: false,
-      isDraft: false,
-    },
-  ];
+            isRead: true,
+            sentAt: Date.now(),
+            emailId: Utils.getRandomId(),
+            isSent: false,
+            isStarred: false,
+            isDraft: false,
+        },
+    ];
 }
 
 function getEmails() {
@@ -267,13 +274,13 @@ function getEmailById(emailId) {
 }
 
 function changeReadStatus(email) {
-  console.log("change read status", email);
-  email.isRead = true;
-  email.sentAt = Date.now();
-  const idx = gEmails.findIndex(
-    (currEmail) => currEmail.emailId === email.emailId
-  );
-  gEmails.splice(idx, 1, email);
+    console.log("change read status", email);
+    email.isRead = true;
+    email.sentAt = Date.now();
+    const idx = gEmails.findIndex(
+        (currEmail) => currEmail.emailId === email.emailId
+    );
+    gEmails.splice(idx, 1, email);
 }
 
 function saveEmail(email) {

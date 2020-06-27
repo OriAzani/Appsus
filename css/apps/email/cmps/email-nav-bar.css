@@ -1,25 +1,24 @@
-.email-nav-bar{
+.email-nav-bar {
     margin-right: 5px;
     width: 300px;
 }
 
-.email-nav-bar a:first-child{
-width: 190px;
-font-size: 1.5rem;
-color:black;
-border:0.3px solid lightgray;
-padding:10px 15px;
-margin:10px auto;
-border-radius:30px;
+.email-nav-bar button:first-child {
+    width: 190px;
+    font-size: 1.5rem;
+    color: black;
+    border: 0.3px solid lightgray;
+    padding: 10px 15px;
+    margin: 10px auto;
+    border-radius: 30px;
 }
 
-.email-nav-bar a:not(:first-child){
-margin:2px;
-color:black;
-border: 1px solid rgb(255, 255, 255);
-border-radius: 0px 20px 20px 0px ;
-padding: 8px;
-height: 40px;
-background-color: rgb(255, 60, 83, 0.5);
+.email-nav-bar button:not(:first-child) {
+    margin: 2px;
+    color: black;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 0px 20px 20px 0px;
+    padding: 8px;
+    height: 40px;
+    background-color: rgb(255, 60, 83, 0.5);
 }
-

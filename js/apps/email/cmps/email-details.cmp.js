@@ -1,7 +1,7 @@
 import { emailService } from "../services/email-service.js";
 
 export default {
-  template: `
+    template: `
         <section class="email-details" v-if="email">
           <section class="details-btns flex justify-end">
             <button @click="close"> <i class="fas fa-times"></i></button>
@@ -15,53 +15,52 @@ export default {
             <pre class="details-body">{{email.body}}</pre>
         </section>
     `,
-  data() {
-    return {
-      tagName: "h2",
-      ok: false,
-      email: null,
-      convertedTime:''
-    };
-  },
-  created() {
-    this.loadEmail();
-    
-  },
-  destroyed() {
-    console.log("CMP CarDetails Destroyed");
-    this.updateStorage();
-  },
-  methods: {
-    close() {
-      this.$router.back();
+    data() {
+        return {
+            tagName: "h2",
+            ok: false,
+            email: null,
+            convertedTime: ''
+        };
     },
+    created() {
+        this.loadEmail();
 
-    convertTime() {
-      var time = this.email.sentAt;
-      this.convertedTime = moment(time).format("MMM Do YY");
     },
+    destroyed() {
+        this.updateStorage();
+    },
+    methods: {
+        close() {
+            this.$router.back();
+        },
 
-    loadEmail() {
-      const { emailId } = this.$route.params;
-      emailService.getEmailById(emailId).then((email) => {
-        this.email = email;
-        this.convertTime();
-        emailService.changeReadStatus(email);
-      });
+        convertTime() {
+            var time = this.email.sentAt;
+            this.convertedTime = moment(time).format("MMM Do YY");
+        },
+
+        loadEmail() {
+            const { emailId } = this.$route.params;
+            emailService.getEmailById(emailId).then((email) => {
+                this.email = email;
+                this.convertTime();
+                emailService.changeReadStatus(email);
+            });
+        },
+        updateStorage() {
+            emailService.saveToLocalStorage();
+        },
+        eraseEmail() {
+            emailService.eraseEmail(this.email)
+            this.close()
+        }
     },
-    updateStorage() {
-      emailService.saveToLocalStorage();
+    watch: {
+        "$route.params.emailId" (newEmailId) {
+            this.loadEmail();
+            this.updateStorage();
+
+        },
     },
-    eraseEmail(){
-      emailService.eraseEmail(this.email)
-      this.close()
-    }
-  },
-  watch: {
-    "$route.params.emailId"(newEmailId) {
-      this.loadEmail();
-      this.updateStorage();
-      
-    },
-  },
 };
