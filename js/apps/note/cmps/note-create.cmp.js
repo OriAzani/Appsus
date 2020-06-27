@@ -6,8 +6,8 @@ export default {
     <section class="flex column">
         <input placeholder="Title" v-if="isAddNote"  type="text" v-model.trim="noteToAdd.info.title"/>
         <input placeholder="add something..." @click="isAddNote=true" type="text" v-model.trim="noteToAdd.info.txt">
-
-        <button @click="isAddUrl=true" @click="changeNoteType('noteImg')">add image</button>
+       
+        <button @click="isAddUrl=true" @click="changeNoteType('noteImg')" > <i class="far fa-image"></i></button>
        <button @click="isAddUrl=true" @click="changeNoteType('noteVideo')">add video</button>
        <!-- <button @click="noteToAdd.type=noteTodos">add todos</button> -->
 
