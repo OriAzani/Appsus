@@ -4,21 +4,52 @@
 @import './fonts.css';
 @import '../css/apps/note/note-main.css';
 @import './fonts.css';
-
-*{
+* {
     box-sizing: border-box;
 }
-
-body{
-    margin:0;
- 
+a{
+    text-decoration: none;   
 }
-
-
+button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
 .main-header {
     margin: 10px 30px;
 }
 
+.home-page {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+.home-page p {
+    margin-top: 50px;
+}
+
+.link-container {
+    margin: 100px;
+}
+
+.link-container button{
+    text-decoration: none;
+    background-color: rgb(255, 194, 194);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    margin: 0px 50px 0px 50px;
+    cursor: pointer;
+
+}
+button:focus {
+  outline:none;
+  box-shadow: none;
+}
 footer {
     text-align: center;
     width: 100%;
