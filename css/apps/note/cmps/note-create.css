@@ -1,8 +1,8 @@
-.note-create-firts-inputs{
-width: 300px;
+.note-create-firts-inputs {
+    width: 300px;
 }
 
-.note-create-firts-inputs input{
+.note-create-firts-inputs input {
     border-width: 0px;
     border: none;
     outline: none;
@@ -12,15 +12,14 @@ width: 300px;
     border-bottom: .3px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
 
-.create-media-btns{
-height: 30px;
-width: 30px;
+.create-media-btns {
+    height: 30px;
+    width: 30px;
 }
 
-.create-media-btns button{
+.create-media-btns button {
     padding: 5px 8px;
     border-radius: 100%;
     margin-right: 10px;
@@ -28,7 +27,7 @@ width: 30px;
     border: 0.5px solid rgb(255, 255, 255);
     cursor: pointer;
 }
-.create-media-btns button:hover{
-    background-color: rgb(255, 206, 214);
 
+.create-media-btns button:hover {
+    background-color: rgb(255, 206, 214);
 }

@@ -7,19 +7,26 @@
 * {
     box-sizing: border-box;
 }
-a{
-    text-decoration: none;   
+
+a {
+    text-decoration: none;
 }
-button a{
+
+button a {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
+
 .main-header {
     margin: 10px 30px;
 }
 
 .home-page {
     text-align: center;
+}
+
+.img {
+    margin-bottom: 50px;
 }
 
 body {
@@ -34,7 +41,7 @@ body {
     margin: 100px;
 }
 
-.link-container button{
+.link-container button {
     text-decoration: none;
     background-color: rgb(255, 194, 194);
     border: 1px solid rgb(255, 255, 255);
@@ -44,13 +51,15 @@ body {
     color: rgb(255, 255, 255);
     margin: 0px 50px 0px 50px;
     cursor: pointer;
+}
 
-}
 button:focus {
-  outline:none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
+
 footer {
+    background-color: rgb(255, 194, 194);
     text-align: center;
     width: 100%;
     border-top: .5px solid #ccc;
