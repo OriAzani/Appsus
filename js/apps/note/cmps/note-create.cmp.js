@@ -4,18 +4,19 @@ export default {
     props: ["notes"],
     template: `
     <section class="flex column">
-        <input placeholder="Title" v-if="isAddNote"  type="text" v-model.trim="noteToAdd.info.title"/>
-        <input placeholder="add something..." @click="isAddNote=true" type="text" v-model.trim="noteToAdd.info.txt">
-       
-        <button @click="isAddUrl=true" @click="changeNoteType('noteImg')" > <i class="far fa-image"></i></button>
-       <button @click="isAddUrl=true" @click="changeNoteType('noteVideo')">add video</button>
-       <!-- <button @click="noteToAdd.type=noteTodos">add todos</button> -->
+        <section class="flex column note-create-firts-inputs">
+            <input placeholder="Title" v-if="isAddNote"  type="text" v-model.trim="noteToAdd.info.title"/>
+            <input placeholder="add something..." @click="isAddNote=true" type="text" v-model.trim="noteToAdd.info.txt">
+            <input placeholder="add a url" v-if="isAddUrl"  type="text" v-model.trim="noteToAdd.info.url"/>
 
-       <input placeholder="add a url" v-if="isAddUrl"  type="text" v-model.trim="noteToAdd.info.url"/>
-       <!-- <input placeholder="Title" v-if="isAddNote"  type="text" v-model.trim="noteToAdd.info.title"/> -->
-       
+        </section>
+       <section class="flex create-media-btns">
+       <button v-if="isAddNote"  @click='saveNote'><i class="far fa-save"></i></button>
+           <button @click="isAddUrl=true" @click="changeNoteType('noteImg')" > <i class="far fa-image"></i></button>
+           <button @click="isAddUrl=true" @click="changeNoteType('noteVideo')"><i class="fas fa-film"></i></button>
+       </section>
 
-        <button v-if="isAddNote" class="align-self-start"  @click='saveNote'>save note</button>
+       
         <note-preview v-for="note in notes"  :note="note" :key="note.id"/> 
     </section>
 `,
@@ -31,7 +32,6 @@ export default {
                     title: "",
                     txt: "",
                     url: "",
-
                 },
             },
         };
@@ -52,7 +52,6 @@ export default {
         },
         changeNoteType(type) {
             this.noteToAdd.type = type;
-
         },
     },
     components: {

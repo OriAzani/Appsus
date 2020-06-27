@@ -4,17 +4,11 @@ export default {
     props: ["notes"],
     template: `
     <div>
-        <ul class="noteBox grid grid-template-columns clean-list">
-
+        <ul class="noteBox clean-list">
             <note-preview v-for="note in notes" @click.native="selectedNote(note)" :note="note" :key="note.id"/> 
-        
-          
         </ul>
-  
-</div>
-       
+    </div>
     `,
-
     methods: {
         selectedNote(note) {
             this.$emit("noteSelected", note);
@@ -23,5 +17,4 @@ export default {
     components: {
         notePreview,
     },
-
 };

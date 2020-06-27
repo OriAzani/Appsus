@@ -54,6 +54,7 @@ function _createDefaultNotes() {
             style: {
                 backgroundColor: "#00d"
             }
+       
         },
         {
             id: 103,
@@ -81,7 +82,8 @@ function _createDefaultNotes() {
                     { txt: "Do nothing", doneAt: Date.now(), },
                 ]
             }
-        }
+        },
+      
     ];
 }
 

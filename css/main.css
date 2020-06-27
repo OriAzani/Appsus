@@ -1,15 +1,17 @@
 @import './helpers.css';
 @import '../css/apps/email/email-main.css';
-<<<<<<< HEAD
 @import './main-nav-bar.css';
 @import './fonts.css';
-
+@import '../css/apps/note/note-main.css';
+@import './fonts.css';
 
 *{
     box-sizing: border-box;
 }
+
 body{
     margin:0;
+ 
 }
 
 .main-header{
@@ -18,17 +20,10 @@ body{
 
 footer{
 text-align: center;
-width: 100%;
 border-top: .5px solid  #ccc;
-position: fixed;
-bottom: 0
 }
+
 footer p{
     padding:5px;
     margin:5px;
-
 }
-=======
-@import '../css/apps/note/note-main.css';
-@import './fonts.css';
->>>>>>> 0ce9005bcf9029b22ccd25c0cc29409ad098a317

@@ -8,7 +8,6 @@ export default {
     template: `
              <main class="note-app">
              <note-create></note-create>  
-
              <note-list :notes="notesToShow"></note-list>      
             </main>
     `,

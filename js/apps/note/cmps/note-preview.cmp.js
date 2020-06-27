@@ -8,7 +8,6 @@ export default {
       <li >
       <component  :is="note.type"  :info="note.info"></component>
       </li>
-      
     `,
 
     components: {
