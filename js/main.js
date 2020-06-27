@@ -9,7 +9,7 @@ new Vue({
         
             <header class="main-header flex align-center space-between">
                 <h1>AppSusita!</h1>
-                <img src="../img/logo.png" alt="logo" width="150" height="150">
+                <img src="../img/logo.jpg" alt="logo" width="150" height="150">
                 <nav-bar/>
             </header>
 
