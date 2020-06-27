@@ -38,15 +38,18 @@ function _createDefaultNotes() {
             type: "noteText",
             isPinned: true,
             info: {
-                txt: "Fullstack Me Baby!"
+                title: "Ori Is the best partner ever",
+                txt: "Ori Azani bla bla bla "
+
             }
-        }, {
+        },
+        {
             id: 102,
             type: "noteImg",
             isPinned: true,
             info: {
+                title: "watch out, the Corona is here.in the meantime enjoy the picture",
                 url: "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg",
-                title: "Me playing Mi"
             },
             style: {
                 backgroundColor: "#00d"
@@ -54,10 +57,23 @@ function _createDefaultNotes() {
         },
         {
             id: 103,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "chuck Norris... a childhood hero",
+                url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+
+        {
+            id: 104,
             type: "noteTodos",
             isPinned: true,
             info: {
-                label: "How was it:",
+                title: "make a shower",
                 todos: [
                     { txt: "Do that", doneAt: Date.now(), },
                     { txt: "Do this", doneAt: Date.now(), },
@@ -70,7 +86,7 @@ function _createDefaultNotes() {
 }
 
 function getNotes() {
- return Promise.resolve(gNotes);
+    return Promise.resolve(gNotes);
 }
 
 function saveNote(note) {
@@ -83,41 +99,3 @@ function saveNote(note) {
         console.log(notes);
     });
 }
-// function saveNote(note) {
-//     if (note.id) {
-//         const idx = gNotes.findIndex(currNote => currNote.id === note.id)
-//         gNotes.splice(idx, 1, note)
-//     } else {
-//         note.id = Utils.getRandomId();
-//         note.createdAt = Date.now();
-//         gNotes.unshift(note);
-//     }
-//     return Promise.resolve(note);
-// }
-
-// function getEmailById(emailId) {
-//     const email = gEmails.find((email) => email.emailId === emailId);
-//     return Promise.resolve(email);
-// }
-
-
-// function changeReadStatus(email) {
-//     console.log(email)
-//     email.isRead = true;
-//     const idx = gEmails.findIndex(currEmail => currEmail.emailId === email.emailId)
-//     gEmails.splice(idx, 1, email)
-
-// }
-
-
-// function saveEmail(email) {
-//     if (car.id) {
-//         const idx = gCars.findIndex(currCar => currCar.id === car.id)
-//         gCars.splice(idx, 1, car)
-//     } else {
-//         car.id = Utils.getRandomId();
-//         car.createdAt = Date.now();
-//         gCars.unshift(car);
-//     }
-//     return Promise.resolve(car);
-// }

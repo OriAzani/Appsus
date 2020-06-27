@@ -1,4 +1,26 @@
 /* --Import for helpers file-- */
+
 @import './helpers.css';
 
 /* --Import for cmps css files-- */
+
+* {
+    box-sizing: border-box;
+    font-family: monts-reg;
+}
+
+.note.image {
+    border: 1px solid red
+}
+
+.note.video {
+    border: 1px solid blue
+}
+
+.note.txt {
+    border: 1px solid yellow
+}
+
+.note.todos {
+    border: 1px solid green;
+}

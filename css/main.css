@@ -1,6 +1,6 @@
 @import './helpers.css';
-
 @import '../css/apps/email/email-main.css';
+<<<<<<< HEAD
 @import './main-nav-bar.css';
 @import './fonts.css';
 
@@ -28,3 +28,7 @@ footer p{
     margin:5px;
 
 }
+=======
+@import '../css/apps/note/note-main.css';
+@import './fonts.css';
+>>>>>>> 0ce9005bcf9029b22ccd25c0cc29409ad098a317

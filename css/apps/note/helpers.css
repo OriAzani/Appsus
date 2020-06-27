@@ -1,38 +1,52 @@
-
 /* helpers */
+
+.grid {
+    display: grid;
+}
+
+.grid-template-columns {
+    grid-template-columns: auto auto auto;
+}
 
 .flex {
     display: flex;
 }
+
 .align-center {
     align-items: center;
 }
+
 .justify-center {
     justify-content: center;
 }
+
 .space-around {
     justify-content: space-around;
 }
+
 .space-between {
     justify-content: space-between;
 }
+
 .column {
     flex-direction: column;
 }
+
 .wrap {
     flex-wrap: wrap;
 }
+
 .flex-start {
     align-items: flex-start;
 }
+
 .flex-end {
     align-items: flex-end;
 }
+
 .justify-end {
     justify-content: flex-end;
 }
-
-
 
 .text-center {
     text-align: center;
@@ -43,7 +57,6 @@
     margin: 0;
     padding: 0;
 }
-
 
 .width-all {
     width: 100%;
@@ -62,6 +75,7 @@
     flex-direction: column;
     align-items: center;
 }
-.column-layout >*:not(:last-child) {
+
+.column-layout>*:not(:last-child) {
     margin-bottom: 7.5px;
 }
