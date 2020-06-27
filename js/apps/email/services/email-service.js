@@ -288,22 +288,11 @@ function saveEmail(email) {
 }
 
 function eraseEmail(email) {
-  console.log("in", email);
-  const idx = gEmails.findIndex(
-    (currEmail) => currEmail.emailId === email.emailId
-  );
-  console.log(idx)
-  gEmails.splice(idx, 1);
-  saveToLocalStorage()
+    console.log("in", email);
+    const idx = gEmails.findIndex(
+        (currEmail) => currEmail.emailId === email.emailId
+    );
+    console.log(idx)
+    gEmails.splice(idx, 1);
+    saveToLocalStorage()
 }
-// function saveEmail(email) {
-//   if (car.id) {
-//     const idx = gCars.findIndex((currCar) => currCar.id === car.id);
-//     gCars.splice(idx, 1, car);
-//   } else {
-//     car.id = Utils.getRandomId();
-//     car.createdAt = Date.now();
-//     gCars.unshift(car);
-//   }
-//   return Promise.resolve(car);
-// }

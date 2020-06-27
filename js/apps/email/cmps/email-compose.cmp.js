@@ -2,7 +2,7 @@ import { emailService } from "../services/email-service.js";
 import emailNav from "./email-nav-bar-cmp.js";
 
 export default {
-  template: `
+    template: `
     <section class="email-compose flex column">
           <h2>Create New Mail</h2>
 
@@ -16,38 +16,38 @@ export default {
           <input type="text" placeholder="cc" v-model="emailToEdit.cc" />
           <input type="text" placeholder="subject" v-model="emailToEdit.subject" />
           <!-- <input type="text" placeholder="body" v-model="emailToEdit.body" /> -->
-          <p><strong> </strong> <textarea class="textarea resize-ta"></textarea></p>
+          <p class="create-body"><strong> </strong> <textarea class="textarea resize-ta"></textarea></p>
       </section>
 
           {{emailToEdit.body}}
           </section>
     `,
 
-  data() {
-    return {
-      emailToEdit: {
-        subject: "",
-        body: "",
-        isRead: true,
-        sentAt: "",
-        emailId: "",
-        isSent: true,
-        isStarred: false,
-        isDraft: false, 
-        sendTo: "",
-      },
-    };
-  },
-  methods: {
-    sendEmail() {
-      emailService.saveEmail(this.emailToEdit);
+    data() {
+        return {
+            emailToEdit: {
+                subject: "",
+                body: "",
+                isRead: true,
+                sentAt: "",
+                emailId: "",
+                isSent: true,
+                isStarred: false,
+                isDraft: false,
+                sendTo: "",
+            },
+        };
     },
-    close() {
-      this.$router.back();
+    methods: {
+        sendEmail() {
+            emailService.saveEmail(this.emailToEdit);
+        },
+        close() {
+            this.$router.back();
+        },
     },
-  },
-  components: {
-    emailService,
-    emailNav,
-  },
+    components: {
+        emailService,
+        emailNav,
+    },
 };

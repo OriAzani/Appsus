@@ -14,16 +14,20 @@ body{
  
 }
 
-.main-header{
-   margin: 10px 30px ;
+
+.main-header {
+    margin: 10px 30px;
 }
 
-footer{
-text-align: center;
-border-top: .5px solid  #ccc;
+footer {
+    text-align: center;
+    width: 100%;
+    border-top: .5px solid #ccc;
+    position: fixed;
+    bottom: 0
 }
 
-footer p{
-    padding:5px;
-    margin:5px;
+footer p {
+    padding: 5px;
+    margin: 5px;
 }

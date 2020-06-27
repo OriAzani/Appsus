@@ -1,7 +1,7 @@
 import { emailService } from "../services/email-service.js";
-import {eventBus} from '../services/event-bus-service.js'
+import { eventBus } from '../services/event-bus-service.js'
 export default {
-    props:['emails'],
+    props: ['emails'],
     template: `
     <nav class=" flex column">
         <router-link to="email/nav/compose">  <i class="fas fa-plus"></i> Compose</router-link> 
@@ -11,12 +11,12 @@ export default {
         <router-link  to="email/nav/drafts"><i class="fab fa-firstdraft"></i> Drafts</router-link>  
     </nav>
     `,
-     methods:{
-     checkNavType(){
-         console.log('dfdfdfdfdfdfd')
-         eventBus.$emit('navigation',`drafts`)
-     }
-     },
+    methods: {
+        checkNavType() {
+            console.log('dfdfdfdfdfdfd')
+            eventBus.$emit('navigation', `drafts`)
+        }
+    },
     computed: {
         checkUnread() {
             return this.emails.reduce((unreadCounter, email) => {
@@ -27,12 +27,12 @@ export default {
 
         },
     },
-   // created() {
-        // emailService.getEmails().then((emails) => {
-        //     this.emails = emails;        
-        //});
+    // created() {
+    // emailService.getEmails().then((emails) => {
+    //     this.emails = emails;        
+    //});
     //}
-    components:{
+    components: {
         eventBus
     }
 }
