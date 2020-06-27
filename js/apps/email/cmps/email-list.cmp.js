@@ -5,7 +5,7 @@ export default {
     props: ["emails"],
     template: `
         <ul class="email-list clean-list flex column ">
-            <email-preview v-for="email in emails" @click.native="selectedEmail(email)" :email="email" :key="email.id"/>
+            <email-preview v-for="email in emails" @click.stop="selectedEmail(email)" :email="email" :key="email.id"/>
         </ul>
     `,
 
@@ -15,11 +15,11 @@ export default {
         },
     },
     components: {
-    emailPreview,
-    // eventBus
+        emailPreview,
+        // eventBus
     },
-    created(){
-       console.log(this.emails);
+    created() {
+        console.log(this.emails);
         // eventBus.$on('navigation',navigation =>{
         //     this.navigation = navigation;
         //     console.log('dfdfdfdfdfd',this.navigation);

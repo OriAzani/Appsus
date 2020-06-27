@@ -6,7 +6,7 @@ import emailNav from "../cmps/email-nav-bar-cmp.js";
 
 
 export default {
-  template: `
+    template: `
         <main class="email-app flex column">
 
 
@@ -22,70 +22,68 @@ export default {
         </section>
             </main>
     `,
-  data() {
-    return {
-      emails: [],
-      filterBy: null,
-    };
-    
-  },
-  computed: {
-    emailsToShow() {
-      const filterBy = this.filterBy;
-      console.log(filterBy)
-      if (!filterBy) return this.emails;
-      
-      else {
-     
-        if (filterBy.boxToSearch === "Draft"){
-          console.log('in Draft')
-          var filteredEmails = this.emails.filter((email) => {
-          return ( email.isRead === true ) && ( email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()) );
-          });
-          return filteredEmails
-        }
-        if (filterBy.boxToSearch === "Read"){
-          console.log('in Read')
-          var filteredEmails = this.emails.filter((email) => {
-          return ( email.isRead === true ) && ( email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()) );
-          });
-          return filteredEmails
-        }
-        else if (filterBy.boxToSearch === "UnRead"){
-          console.log('in UnRead')
-          var filteredEmails = this.emails.filter((email) => {
-            return ( email.isRead === false ) && ( email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()) );
-          });
-          return filteredEmails
-        } 
-        else {
-          var filteredEmails = this.emails.filter((email) => {
-          return ( email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) ||  email.body .toLowerCase().includes(filterBy.searchStr.toLowerCase()) );
-      });
-      return filteredEmails
-      }
-    }
-    },
-  },
-  methods: {
-    setFilter(filterBy) {
-      this.filterBy = null;
-      this.filterBy = filterBy;
-      this.emailsToShow;
-    },
-  },
+    data() {
+        return {
+            emails: [],
+            filterBy: null,
+        };
 
-  
-  created() {
-    emailService.getEmails().then((emails) => {
-      this.emails = emails;
-    });
-  },
+    },
+    computed: {
+        emailsToShow() {
+            const filterBy = this.filterBy;
+            console.log(filterBy)
+            if (!filterBy) return this.emails;
 
-  components: {
-    emailList,
-    emailNav,
-    emailCompose,
-    emailFilter,
-  },
+            else {
+
+                if (filterBy.boxToSearch === "Draft") {
+                    console.log('in Draft')
+                    var filteredEmails = this.emails.filter((email) => {
+                        return (email.isRead === true) && (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
+                    });
+                    return filteredEmails
+                }
+                if (filterBy.boxToSearch === "Read") {
+                    console.log('in Read')
+                    var filteredEmails = this.emails.filter((email) => {
+                        return (email.isRead === true) && (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
+                    });
+                    return filteredEmails
+                } else if (filterBy.boxToSearch === "UnRead") {
+                    console.log('in UnRead')
+                    var filteredEmails = this.emails.filter((email) => {
+                        return (email.isRead === false) && (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
+                    });
+                    return filteredEmails
+                } else {
+                    var filteredEmails = this.emails.filter((email) => {
+                        return (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
+                    });
+                    return filteredEmails
+                }
+            }
+        },
+    },
+    methods: {
+        setFilter(filterBy) {
+            this.filterBy = null;
+            this.filterBy = filterBy;
+            this.emailsToShow;
+        },
+    },
+
+
+    created() {
+        emailService.getEmails().then((emails) => {
+            this.emails = emails;
+        });
+    },
+
+    components: {
+        emailList,
+        emailNav,
+        emailCompose,
+        emailFilter,
+    },
 };
