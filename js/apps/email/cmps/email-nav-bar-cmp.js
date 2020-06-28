@@ -1,6 +1,7 @@
 export default {
     props: ['emails'],
     template: `
+
     <nav class="email-nav-bar flex column">
         
     <router-link to="email/compose"> <span><i class="fas fa-plus"></i></span>  Compose</router-link> 
@@ -17,15 +18,55 @@ export default {
             this.$emit('setStatus', status)
         }
     },
-    computed: {
-        checkUnread() {
-            return this.emails.reduce((unreadCounter, email) => {
-                if (!email.isRead) unreadCounter++;
-                return unreadCounter;
-            }, 0);
+    data() {
+        return {
+            emailsStam: this.emails
 
-        },
+        };
+
+    },
+    // computed: {
+    //     checkUnread() {
+    //         return this.emails.reduce((unreadCounter, email) => {
+    //             if ((!email.isRead) && (email.isInbox)) unreadCounter++;
+    //             return unreadCounter;
+    //         }, 0);
+
+    //     },
+    // },
+    created() {
+        console.log(this.emailsStam);
+        // this.inbox = this.emails.filter(email => email.isInbox)
+        // console.log(this.inbox);
+
     },
 
 
 }
+//    // data() {
+//     //     return {
+//     //         inbox: [],
+
+//     //     };
+
+//     // },
+//     computed: {
+//         checkUnread() {
+//             return this.inbox.reduce((unreadCounter, email) => {
+//                 if (!email.isRead) unreadCounter++;
+//                 return unreadCounter;
+//             }, 0);
+
+//         },
+
+
+//     },
+//     created() {
+//         console.log(this.emails);
+//         // this.inbox = this.emails.filter(email => email.isInbox)
+//         // console.log(this.inbox);
+
+//     },
+
+
+// }

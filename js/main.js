@@ -24,8 +24,8 @@ new Vue({
     components: {
         navBar
     },
-    methods:{
-        goHome(){
+    methods: {
+        goHome() {
             this.$router.push('/')
         }
     }
