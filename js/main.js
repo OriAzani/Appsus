@@ -8,23 +8,25 @@ new Vue({
         <div class="flex column">
         
             <header class="main-header flex align-center space-between">
-                <h1>AppSusita!</h1>
-                <img src="https://i.imgur.com/xr250WX.jpg" alt="logo" width="150" height="150">
+                <img class="home-logo" @click="goHome" src="../img/logo.jpg" alt="logo">
                 <nav-bar/>
             </header>
 
             <main>
                 <router-view />
-                
             </main>
             
             <footer class="flex column">
-               <p> Coffeerights 2020 </p>
-               <p>Dolev Tsfoni & Ori Azani</p>
+              <p>Coffeerights 2020 Dolev Tsfoni & Ori Azani</p> 
             </footer>
         </div>
     `,
     components: {
         navBar
     },
+    methods:{
+        goHome(){
+            this.$router.push('/')
+        }
+    }
 });
