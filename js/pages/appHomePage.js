@@ -16,23 +16,19 @@ export default {
 
     </section>
     `,
-methods: {
-  routeClicked(pageRoute) {
-      switch (pageRoute) {
-          case 'email':
-              this.$router.push('/email')
-              break;
-          case 'note':
-              this.$router.push('/note')
-              break;
-          case 'about':
-              this.$router.push('/about')
-              break;
-      }
+    methods: {
+        routeClicked(pageRoute) {
+            switch (pageRoute) {
+                case 'email':
+                    this.$router.push('/email')
+                    break;
+                case 'note':
+                    this.$router.push('/note')
+                    break;
+                case 'about':
+                    this.$router.push('/about')
+                    break;
+            }
+        }
     }
-  }
 }
-  
-  
-  
-  

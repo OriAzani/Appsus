@@ -42,6 +42,8 @@ export default {
 
         loadEmail() {
             const { emailId } = this.$route.params;
+            console.log(emailId);
+
             emailService.getEmailById(emailId).then((email) => {
                 this.email = email;
                 this.convertTime();
