@@ -1,79 +1,10 @@
-@import './helpers.css';
-@import './fonts.css';
-@import './home-page.css';
-@import './main-nav-bar.css';
-@import './about.css';
-@import '../css/apps/email/email-main.css';
-@import '../css/apps/note/note-main.css';
-/* @import './break-points.css'; */
-/* ---GENERAL--- */
 
-* {
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    text-decoration: none;
-}
-
-.main-container {
-    height: 100vh;
-}
-
-/* ---Header--- */
-
-.main-header {
-    margin: 10px 80px;
-    padding: 0px 20px 0px 20px;
-}
-
-/* burger */
-
-.btn-menu {
-    display: none;
-}
-
-.app-container {
-    margin: 0px 80px;
-    flex-grow: 1;
-}
-
-.home-logo {
-    height: 120px;
-    width: 120px;
-    cursor: pointer;
-}
-
-/* --- MAIN ---*/
-
-body {
-    margin: 0;
-}
-
-/* --- FOOTER ---*/
-
-footer {
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    border-top: .5px solid #ccc;
-    background-color: rgb(255, 255, 255);
-}
-
-footer p {
-    padding: 5px 20px 5px 20px;
-}
-
-/* ---BREAKPOINTS---*/
+/* ---BREAKPOINTS--- */
 
 @media only screen and (max-width: 900px) {
     .main-header {
         margin: 10px 40px;
-        padding: 0px 20px 0px 20px; 
+        /* padding: 0px 20px 0px 20px; */
     }
     .app-container {
         margin: 0px 40px;
@@ -108,7 +39,6 @@ footer p {
 }
 
 @media only screen and (max-width: 700px) {
-
     /* main // Homepage */
     .main-nav-links {
         display: none;
@@ -213,4 +143,4 @@ footer p {
     display: none;
     }
 
-} 
+}
