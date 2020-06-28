@@ -7,7 +7,7 @@ import emailNav from "../cmps/email-nav-bar-cmp.js";
 
 export default {
     template: `
-        <main class="email-app flex column">
+        <main  v-if="emails" class="email-app flex column">
 
 
         <section  class="email-header flex align-center">
@@ -39,7 +39,7 @@ export default {
             else {
 
                 if (filterBy.boxToSearch === "Read") {
-                    console.log('in Read')
+
                     var filteredEmails = this.emails.filter((email) => {
                         return (email.isRead === true) && (email.subject.toLowerCase().includes(filterBy.searchStr.toLowerCase()) || email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase()));
                     });
@@ -72,8 +72,6 @@ export default {
         }
 
     },
-
-
     created() {
         emailService.getEmails().then((emails) => {
             this.emails = emails;

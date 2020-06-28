@@ -1,0 +1,48 @@
+
+button a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.home-page {
+    text-align: center;
+}
+
+.home-page p {
+    margin-top: 50px;
+}
+
+
+.link-container {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.link-container button {
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: rgb(255, 199, 199);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    margin: 50px 50px 0px 50px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.link-container .home-note-btn:hover {
+color:black;
+transform:scale(1.3) rotate(10deg);
+}
+.link-container .home-email-btn:hover {
+color:black;
+transform:scale(1.3) rotate(-10deg);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}

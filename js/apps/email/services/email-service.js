@@ -25,7 +25,7 @@ function getEmailsByStatus(status) {
 
     if (status === 'drafts') return gEmails.filter(email => !email.isSent)
 
-    if (status === 'inbox') return gEmails.filter(email => email.isDraft)
+    if (status === 'inbox') return gEmails.filter(email => email.isInbox)
     if (status === 'starred') return gEmails.filter(email => email.isStarred)
     if (status === 'sent') return gEmails.filter(email => email.isSent)
 }
@@ -46,6 +46,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: true,
+            isInbox: true,
         },
         {
             from: "Shimi@gmail.com",
@@ -57,17 +58,19 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: true,
+            isInbox: true,
         },
         {
             from: "rick@gmail.com",
             subject: "Salam",
             body: `ata beseder ata!`,
-            isRead: true,
+            isRead: false,
             sentAt: 1492176311400,
             emailId: Utils.getRandomId(),
-            isSent: false,
+            isSent: true,
             isStarred: false,
             isDraft: false,
+            isInbox: false,
         },
         {
             from: "kapara@gmail.wow",
@@ -82,6 +85,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: false,
         },
         {
             from: "csshitler@gmail.com",
@@ -95,6 +99,7 @@ function _createDefaultEmails() {
             isSent: true,
             isStarred: false,
             isDraft: false,
+            isInbox: false,
         },
         {
             from: "avocado@avocode.com",
@@ -114,6 +119,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "bandcamp@music.com",
@@ -129,6 +135,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "dropBox@cloud.com",
@@ -145,6 +152,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: false,
         },
         {
             from: "wow@comedy.com",
@@ -174,6 +182,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "code@pen.com",
@@ -206,6 +215,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "ImperialCocktailBar@Imperial.com",
@@ -226,6 +236,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "udacity@udc.com",
@@ -245,6 +256,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
         {
             from: "Guitarplayer@gibson",
@@ -259,6 +271,7 @@ function _createDefaultEmails() {
             isSent: false,
             isStarred: false,
             isDraft: false,
+            isInbox: true,
         },
     ];
 }

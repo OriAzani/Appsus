@@ -38,9 +38,8 @@ function _createDefaultNotes() {
             type: "noteText",
             isPinned: true,
             info: {
-                title: "Ori Is the best partner ever",
-                txt: "Ori Azani bla bla bla "
-
+                title: "Advanced Workout Routine For Men",
+                txt: "Day 1- Chest & Back ,Day-2:Legs, Day-3:Shoulders & Arms, Day-4: Rest, Day-5 Chest, Shoulders, & Triceps ,Day-6: Back & Biceps, Day-7: Legs "
             }
         },
         {
@@ -48,21 +47,21 @@ function _createDefaultNotes() {
             type: "noteImg",
             isPinned: true,
             info: {
-                title: "watch out, the Corona is here.in the meantime enjoy the picture",
+                title: "Vacation in the caribbeans",
                 url: "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg",
             },
             style: {
                 backgroundColor: "#00d"
             }
-       
+
         },
         {
             id: 103,
             type: "noteVideo",
             isPinned: true,
             info: {
-                title: "chuck Norris... a childhood hero",
-                url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+                title: "Pocahontas | Colors of the Wind | Disney Sing-Along",
+                url: "https://www.youtube.com/embed/O9MvdMqKvpU?autoplay=1",
             },
             style: {
                 backgroundColor: "#00d"
@@ -74,16 +73,28 @@ function _createDefaultNotes() {
             type: "noteTodos",
             isPinned: true,
             info: {
-                title: "make a shower",
+                title: "Todos!!",
                 todos: [
-                    { txt: "Do that", doneAt: Date.now(), },
-                    { txt: "Do this", doneAt: Date.now(), },
-                    { txt: "Do something", doneAt: Date.now(), },
-                    { txt: "Do nothing", doneAt: Date.now(), },
+                    { txt: "Buy groceries", doneAt: Date.now(), },
+                    { txt: "Clean the apartment", doneAt: Date.now(), },
+                    { txt: "study vue framework", doneAt: Date.now(), },
+                    { txt: "call mom", doneAt: Date.now(), },
                 ]
             }
         },
-      
+        {
+            id: 105,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "Lion king",
+                url: "https://www.youtube.com/embed/25QyCxVkXwQ",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+
     ];
 }
 
