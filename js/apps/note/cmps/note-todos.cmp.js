@@ -4,8 +4,9 @@ export default {
         <section  class="note todos">
         <h2 v-if="info.title">{{info.title}}</h2>
         <li v-for="todo in info.todos">
-                <label>{{todo.txt}}</label>
-                <label>{{convertTime(todo.doneAt)}}</label>
+
+                {{todo.txt}}
+                {{convertTime(todo.doneAt)}}
         </li>
         </section>
         `,

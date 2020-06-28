@@ -6,7 +6,7 @@ export default {
     props: ['note'],
     template: `
       <li >
-      <component  :is="note.type"  :info="note.info"></component>
+      <component class="preview-note" :is="note.type"  :info="note.info"></component>
       </li>
     `,
 

@@ -22,15 +22,12 @@ export default {
             const filterBy = this.filterBy;
             if (!filterBy) return this.notes;
             console.log(this.notes);
-
         },
     },
     created() {
         noteService.getNotes().then((notes) => {
             this.notes = notes;
-
         });
-
     },
     components: {
         noteList,

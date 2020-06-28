@@ -37,10 +37,10 @@ button {
     display: none;
 }
 
-.app-container {
+/* .app-container {
     margin: 0px 80px;
     flex-grow: 1;
-}
+} */
 
 .home-logo {
     height: 120px;
@@ -75,8 +75,14 @@ footer p {
         margin: 10px 40px;
         padding: 0px 20px 0px 20px; 
     }
-    .app-container {
+    /* .app-container {
         margin: 0px 40px;
+    } */
+}
+
+@media only screen and (max-width: 875px){
+    .noteBox{
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
@@ -212,5 +218,8 @@ footer p {
     .email-nav-bar span{
     display: none;
     }
+       .noteBox{
 
+      grid-template-columns: repeat(1,1fr);
+       }
 } 

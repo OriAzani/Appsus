@@ -6,15 +6,14 @@
 @import './cmps/note-img.css';
 @import './cmps/note-list.css';
 @import './cmps/note-create.css';
+@import './cmps/note-preview.css';
 
 * {
     box-sizing: border-box;
     font-family: monts-reg;
 }
 
-.note-app {
-margin:0px 80px;
-}
+
 
 a{
   text-decoration: none
@@ -22,31 +21,5 @@ a{
 
 
 
-
-/* --Import for cmps css files-- */
-
-/* * {
-    box-sizing: border-box;
-    font-family: monts-reg;
-}
-
-.note.image {
-    border: 1px solid red
-}
-
-.note.video {
-    border: 1px solid blue;
-    width: 100px;
-    height: 100px;
-
-}
-
-.note.txt {
-    border: 1px solid yellow
-}
-
-.note.todos {
-    border: 1px solid green;
-} */
 
 

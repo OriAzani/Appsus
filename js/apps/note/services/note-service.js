@@ -33,13 +33,17 @@ function getEmptyNote() {
 
 
 function _createDefaultNotes() {
-    return [{
+    return [
+        {
             id: 101,
-            type: "noteText",
+            type: "noteImg",
             isPinned: true,
             info: {
-                title: "Advanced Workout Routine For Men",
-                txt: "Day 1- Chest & Back ,Day-2:Legs, Day-3:Shoulders & Arms, Day-4: Rest, Day-5 Chest, Shoulders, & Triceps ,Day-6: Back & Biceps, Day-7: Legs "
+                title: "Moonlight Shadow",
+                url: "https://files.brightside.me/files/news/part_4/46555/206005-12-_2_-1000-73714306eb-1570093949.jpg",
+            },
+            style: {
+                backgroundColor: "#00d"
             }
         },
         {
@@ -67,9 +71,57 @@ function _createDefaultNotes() {
                 backgroundColor: "#00d"
             }
         },
-
         {
             id: 104,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "Cali Move VS Fitness FAQs | Sydney VLOG #2",
+                url: "https://www.youtube.com/watch?v=lCaUetzqZTk",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+    
+        {
+            id: 105,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "Lion king",
+                url: "https://www.youtube.com/embed/25QyCxVkXwQ",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+        {
+            id: 106,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "Rocky Balboa",
+                url: "https://www.youtube.com/watch?v=ac03kTu6Q28",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+        {
+            id: 107,
+            type: "noteVideo",
+            isPinned: true,
+            info: {
+                title: "Powerful Detox Music",
+                url: "https://www.youtube.com/watch?v=X-3Wo8Qm6H4",
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
+        },
+        {
+            id: 108,
             type: "noteTodos",
             isPinned: true,
             info: {
@@ -83,18 +135,14 @@ function _createDefaultNotes() {
             }
         },
         {
-            id: 105,
-            type: "noteVideo",
+            id: 109,
+            type: "noteText",
             isPinned: true,
             info: {
-                title: "Lion king",
-                url: "https://www.youtube.com/embed/25QyCxVkXwQ",
-            },
-            style: {
-                backgroundColor: "#00d"
+                title: "Advanced Workout Routine For Men",
+                txt: "Day 1- Chest & Back ,Day-2:Legs, Day-3:Shoulders & Arms, Day-4: Rest, Day-5 Chest, Shoulders, & Triceps ,Day-6: Back & Biceps, Day-7: Legs "
             }
         },
-
     ];
 }
 

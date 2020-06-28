@@ -3,7 +3,7 @@ import notePreview from "./note-preview.cmp.js";
 export default {
     props: ["notes"],
     template: `
-    <section class="flex column">
+    <section class="note-create flex column">
         <section class="flex column note-create-firts-inputs">
             <input placeholder="Title" v-if="isAddNote"  type="text" v-model.trim="noteToAdd.info.title"/>
             <input placeholder="add something..." @click="isAddNote=true" type="text" v-model.trim="noteToAdd.info.txt">
