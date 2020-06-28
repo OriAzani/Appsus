@@ -8,8 +8,8 @@ new Vue({
         <div class="flex column">
         
             <header class="main-header flex align-center space-between">
-                <h1>AppSusita!</h1>
-                <img src="https://i.imgur.com/xr250WX.jpg" alt="logo" width="150" height="150">
+                <!-- <h1>AppSusita!</h1> -->
+                <img src="../img/logo.jpg" alt="logo" width="120" height="120">
                 <nav-bar/>
             </header>
 

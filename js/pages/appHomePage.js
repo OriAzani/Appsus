@@ -9,23 +9,28 @@ export default {
     </p>
 
       <div class="link-container">
-      <button @click="emailClicked"> <router-link to="/email">Email</router-link></button>
-      <button @click="noteClicked"><router-link to="/note">Note</router-link ></button>
+      <button @click=" pickerClicked(email)"> <router-link to="/email">Email</router-link></button>
+      <button @click=" pickerClicked(note)"><router-link to="/note">Note</router-link ></button>
+      <button @click=" pickerClicked(home)"><router-link to="/home">home</router-link ></button>
       </div>
 
     </section>
     `,
-    methods:{
-      emailClicked() {
-       this.$router.push('/email')
-      },
-      noteClicked() {
-       this.$router.push('/note')
-      }
+    methods: {
+        pickerClicked(pickPage) {
+
+            switch (pickPage) {
+
+                case 'email':
+                    this.$router.push('/email')
+                    break;
+                case 'note':
+                    this.$router.push('/note')
+                    break;
+                case 'home':
+                    this.$router.push('/home')
+                    break;
+            }
+        }
     }
 }
-
-  
-  
-  
-  
