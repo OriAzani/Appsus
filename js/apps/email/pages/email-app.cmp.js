@@ -7,21 +7,21 @@ import emailNav from "../cmps/email-nav-bar-cmp.js";
 
 export default {
     template: `
-        <main  v-if="emails" class="email-app flex column">
+    <main class="email-app flex column">
 
 
-        <section  class="email-header flex align-center">
-          <h1 class="logo"> Email App <i class="far fa-envelope"></i></h1>
-          <email-filter class="filter-input"  @filter="setFilter"/></email-filter>
-        </section>
+    <section  class="email-header flex align-center">
+      <h1 class="logo"> Email App <i class="far fa-envelope"></i></h1>
+      <email-filter class="filter-input"  @filter="setFilter"/></email-filter>
+    </section>
 
-        <section class="flex">
-          <!-- <email-second-nav  class="email-second-nav-bar" :emails="emails"></email-nav> -->
-          <email-nav v-if="emails" @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
-          <email-list class="email-list" :emails="emailsToShow"></email-list>                   
-        </section>
-            </main>
-    `,
+    <section class="email-app-body flex">
+  
+      <email-nav @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
+      <email-list class="email-list" :emails="emailsToShow"></email-list>                   
+    </section>
+        </main>
+`,
     data() {
         return {
             emails: [],
