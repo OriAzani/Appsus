@@ -8,7 +8,7 @@ new Vue({
         <div class="main-container flex column">
         
             <header class="main-header flex align-center space-between">
-                <img class="home-logo" @click="goHome" src="../img/logo.jpg" alt="logo">
+                <img class="home-logo" @click="goHome" src="img/logo.jpg" alt="logo">
                 <nav-bar/>
             </header>
 
