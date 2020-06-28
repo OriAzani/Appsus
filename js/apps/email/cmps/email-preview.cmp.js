@@ -3,21 +3,21 @@ import { emailService } from "../services/email-service.js";
 export default {
     props: ["email"],
     template: `
-        <li  class="email-preview flex column space-between" >
-            <router-link :to="'/email/emailId/' + email.emailId">
+        <li  class="email-preview-li flex column space-between" >
+           <router-link :to="'/email/emailId/' + email.emailId">
 
-            <section class="preview-li flex column">
-              <p class="from-p"> <{{email.from}}> </p>
+           <section class="preview-li flex column">
 
-              <section class="bottom-two flex space-between flex-end ">
-        
-             <email-description :txt="email.subject"></email-description> 
+           <p class="from-p"> <{{email.from}}> </p>
+
+           
+           <section class="bottom-line flex space-between flex-end ">
+            <email-description  :txt="email.subject"></email-description> 
              <email-description :txt="email.body"></email-description> 
              <p class="email-time"> {{this.convertedTime}}</p>
 
              <button v-if="!isStarred" class="preview-star"  @click.stop="starEmail"> <i class="far fa-star"></i> </button>
              <button v-if="isStarred" class="preview-star"  @click.stop="starEmail"> <i  class="fas fa-star"></i> </button>
-
              <button class="preview-erase" @click.prevent="eraseEmail"> <i class="fas fa-trash-alt"></i> </button>
 
   

@@ -1,31 +1,28 @@
 
-li p{
-  font-size: 0.8rem;
-  color:rgb(94, 94, 94); 
-  margin:2px;
-  width: 200px;
-}
-
-li p:last-child{
-  width: 250px;
-}
 .from-p{
   font-size: .5rem;
 }
 
-.bottom-two{
+.bottom-line{
   border-bottom: 0.5px solid lightgray;
+  line-height: .8rem;
 }  
-/* .bottom-two :nth-child(2){
-padding-right: 100px;
-} */
-.email-body{
-  width: 400px;
+.email-preview-subject p{
+  font-size: 1rem;
 }
+
+.bottom-line p{
+  width: 100px;
+  font-size: 0.8rem;
+  color:rgb(94, 94, 94); 
+  margin:2px;
+}  
+
 
 a{
   padding: 5px;
 }
+
 
 .preview-erase{
   font-size: 15px;
@@ -36,14 +33,6 @@ a{
   cursor: pointer;
 }
 .preview-star{
-  font-size: 15px;
-  outline:none;
-  box-shadow: none;
-  background-color: rgb(255, 255, 255); 
-  border: none;
-  cursor: pointer;
-}
-.preview-read{
   font-size: 15px;
   outline:none;
   box-shadow: none;

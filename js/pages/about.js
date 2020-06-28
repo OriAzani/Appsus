@@ -3,11 +3,11 @@ export default {
     template: `
     <section class="about-page flex column">
     <h1>About Us</h1>
-        <pre>
-        This app was created by Dolev Tsfoni & Ori Azani for "Coding Academy".
-        AppSusita was created in order to display the power of Vue framework.
-        If you enjoy using this app , consider checking out our other projects:
-        </pre>
+        <p>
+        This app was created by Dolev Tsfoni & Ori Azani for "Coding Academy".<br>
+        AppSusita was created in order to display the power of Vue framework.<br>
+        If you enjoy using this app , consider checking out our other projects:<br>
+        </p>
 
         <pre class="about-links">
         <a href=" https://dolev415.github.io/MineSweeperFinalP/">MineSweeper</a>

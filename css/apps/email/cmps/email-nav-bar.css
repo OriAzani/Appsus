@@ -3,7 +3,7 @@
     width: 300px;
 }
 
-.email-nav-bar button:first-child {
+.email-nav-bar a:first-child {
     width: 190px;
     font-size: 1.5rem;
     color: black;

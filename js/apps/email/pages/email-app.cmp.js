@@ -15,8 +15,8 @@ export default {
           <email-filter class="filter-input"  @filter="setFilter"/></email-filter>
         </section>
 
-        <section class="flex">
-          <!-- <email-second-nav  class="email-second-nav-bar" :emails="emails"></email-nav> -->
+        <section class="email-app-body flex">
+      
           <email-nav @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
           <email-list class="email-list" :emails="emailsToShow"></email-list>                   
         </section>
