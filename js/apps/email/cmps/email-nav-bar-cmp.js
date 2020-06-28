@@ -1,13 +1,16 @@
 export default {
     props: ['emails'],
     template: `
-    <nav  v-if="emails" class=" flex column">
 
-        <router-link to="email/compose">  <i class="fas fa-plus"></i> Compose</router-link> 
-        <button  @click="setStatus('inbox')" > <i class="fas fa-inbox"></i> Inbox: {{checkUnread}} </button>
-        <button  @click="setStatus('starred')" > <i class="far fa-star"></i> Starred </button>  
-        <button  @click="setStatus('sent')" > <i class="far fa-share-square"></i> Sent Mail </button>  
-        <button  @click="setStatus('drafts')" > <i class="fab fa-firstdraft"></i> Drafts </button>  
+    <nav class="email-nav-bar flex column">
+        
+    <router-link to="email/compose"> <span><i class="fas fa-plus"></i></span>  Compose</router-link> 
+
+        <button class="draftBtn" @click="setStatus('inbox')" > <span><i class="fas fa-inbox"></i></span> Inbox {{checkUnread}} </button>
+        <button class="draftBtn" @click="setStatus('starred')"> <span><i class="far fa-star"></i></span> Starred </button>  
+        <button class="draftBtn" @click="setStatus('sent')">  <span> <i class="far fa-share-square"></i> </span> Sent Mail </button>  
+        <button class="draftBtn" @click="setStatus('drafts')"> <span><i class="fab fa-firstdraft"></i> </span>Drafts </button>  
+   
     </nav>
     `,
     methods: {
