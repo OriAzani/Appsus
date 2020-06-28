@@ -7,7 +7,7 @@ export default {
             <!-- <router-link :to="'/email/emailId/' + email.emailId"> -->
             <div  @click="enterEmail">
             <section class="preview-li flex column">
-              <p class="from-p"> <{{email.from}}> </p>
+    
 
            <p class="from-p"> <{{email.from}}> </p>
 
