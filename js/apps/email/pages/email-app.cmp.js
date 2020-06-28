@@ -17,7 +17,7 @@ export default {
 
         <section class="flex">
           <!-- <email-second-nav  class="email-second-nav-bar" :emails="emails"></email-nav> -->
-          <email-nav @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
+          <email-nav v-if="emails" @setStatus="setStatus" class="email-nav-bar" :emails="emails"></email-nav>
           <email-list class="email-list" :emails="emailsToShow"></email-list>                   
         </section>
             </main>

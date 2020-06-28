@@ -9,9 +9,11 @@ export default {
             <section class="preview-li flex column">
               <p class="from-p"> <{{email.from}}> </p>
 
-              <section class="bottom-two flex space-between flex-end ">
-        
-             <email-description :txt="email.subject"></email-description> 
+           <p class="from-p"> <{{email.from}}> </p>
+
+           
+           <section class="bottom-line flex space-between flex-end ">
+            <email-description  :txt="email.subject"></email-description> 
              <email-description :txt="email.body"></email-description> 
              <p class="email-time"> {{this.convertedTime}}</p>
 

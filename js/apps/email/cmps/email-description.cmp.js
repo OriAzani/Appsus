@@ -1,7 +1,7 @@
 export default {
     props: ['txt'],
     template: `
-    <div class="book-desc"> 
+    <div class="email-desc"> 
         <div class="short-text"> 
             <p v-if="!showAllText"> {{ shortText }} </p>
             <p v-else> {{ txt }}  </p>
@@ -23,10 +23,10 @@ export default {
 
         shortText() {
             if (!this.isLongText) return this.txt;
-            return this.txt.slice(0, 30) + '...';
+            return this.txt.slice(0, 50) + '...';
         },
         isLongText() {
-            return (this.txt.length > 30)
+            return (this.txt.length > 50)
         }
     }
 };
